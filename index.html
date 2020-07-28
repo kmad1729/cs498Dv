@@ -54,15 +54,16 @@
             
             // d3.json(finalDataUrl).then(inp_data => chart(inp_data));
                             
-            var selectedCountries = [
-                    { countryName: "US", colorToUse: "red"},
-                    {countryName: "France",  colorToUse: "dodgerblue" },
-                    {countryName: "Germany",  colorToUse: "orange" },
-                    {countryName: "Italy",  colorToUse: "grey" },
-                    {countryName: "United_Kingdom",  colorToUse: "cyan" },
-                    {countryName: "India",  colorToUse: "pink" },
-                    {countryName: "Brazil",  colorToUse: "darkkhaki" }
-                ]
+            var allCountryData = [
+                { countryName: "US", colorToUse: "red"},
+                {countryName: "France",  colorToUse: "dodgerblue" },
+                {countryName: "Germany",  colorToUse: "orange" },
+                {countryName: "Italy",  colorToUse: "grey" },
+                {countryName: "United_Kingdom",  colorToUse: "cyan" },
+                {countryName: "India",  colorToUse: "pink" },
+                {countryName: "Brazil",  colorToUse: "darkkhaki" }
+            ]
+            var selectedCountries = [];
 
             d3.json(finalDataUrl, function (error, inp_data) {
                 var parseDate = d3.timeParse("%m/%d/%y");
@@ -102,7 +103,8 @@
                     hahaha = singleDayData.date
                 });
 
-                selectedCountries.forEach(function(countryObj) {
+                // creating lines for all countries
+                allCountryData.forEach(function(countryObj) {
 
                     countryName = countryObj.countryName
                     colorToUse = countryObj.colorToUse
@@ -129,7 +131,7 @@
 
                 // add checkboxes
                 d3.select("body").selectAll("input")
-                    .data(selectedCountries)
+                    .data(allCountryData)
                     .enter()
                     .append("div")
                         .attr("class", "countryCB")
@@ -137,12 +139,12 @@
                         .attr("type", "checkbox")
                         .attr("checked", true)                        
                         .attr("id", function(d, i) { return  "countryCB-" + d.countryName })
+                    .call(updateAllSelectedCountries)
                 ;
                 
                 d3.selectAll(".countryCB")
                     .append("label")
                         .attr("for", function(d, i) {
-                            console.log(d);
                             return "countryCB-" + d.countryName
                         })
                         .text(function(d) {
@@ -154,7 +156,7 @@
                 svg.append('g')
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
                     .selectAll("text")
-                    .data(selectedCountries)
+                    .data(allCountryData)
                     .enter()
                     .append("text")
                     .attr("id", function(d, i) {
@@ -181,12 +183,31 @@
 
         });
 
-        d3.select('#start').on("click", function() {animatePath(selectedCountries)});
+        d3.select('#start').on("click", function() {
+            hideAllLines()
+            updateAllSelectedCountries()
+            animatePath(selectedCountries)}
+        );
         d3.select('#reset').on("click", hideAllLines);
                         
         function animatePath(checkboxTrueCountries) {
             //animation
-            checkboxTrueCountries.forEach(function(countryObj) {
+            checkboxTrueCountries.forEach(function(selectedCountryName) {
+                // TODO change it to dictionary
+                var countryObj = null;
+                allCountryData.forEach(function(d) {
+                    if (d.countryName == selectedCountryName) {
+                        countryObj = d;
+                        return;
+                    }
+                })
+
+                if (countryObj == null) {
+                    msg = selectedCountryName + " doesn't exist in list!!";
+                    console.error(msg)
+                    throw msg;
+                }
+
                 countryName = countryObj.countryName
                 pathObj = d3.select("#covidpath-" + countryName)
                 var totalLength = pathObj.node().getTotalLength()
@@ -202,6 +223,20 @@
         function hideAllLines() {
             d3.selectAll('.line').style("opacity", 0)
         }
+
+        function updateAllSelectedCountries() {
+            result = []
+            allCountryData.forEach(function (countryObj) {
+                var currCbElem = d3.select("#countryCB-" + countryObj.countryName)
+                var pref = "(" + countryObj.countryName + ")"
+                if (currCbElem.node().checked) {
+                    result.push(countryObj.countryName)
+                } else {
+                }
+            })
+            selectedCountries = result
+        }
+        
 
         
         </script>
