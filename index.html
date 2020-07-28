@@ -71,15 +71,7 @@
             
             // d3.json(finalDataUrl).then(inp_data => chart(inp_data));
                             
-            var allCountryData = [
-                { countryName: "US", colorToUse: "red"},
-                {countryName: "France",  colorToUse: "dodgerblue" },
-                {countryName: "Germany",  colorToUse: "orange" },
-                {countryName: "Italy",  colorToUse: "grey" },
-                {countryName: "United_Kingdom",  colorToUse: "turquoise" },
-                {countryName: "India",  colorToUse: "green" },
-                {countryName: "Brazil",  colorToUse: "darkkhaki" }
-            ]
+
             var allCountryDataMap = {
                 "US":{colorToUse: "red"},
                 "France":{colorToUse: "dodgerblue"},
@@ -89,6 +81,17 @@
                 "India":{colorToUse: "green"},
                 "Brazil":{colorToUse: "darkkhaki"},
             }
+            var allCountryData = getAllCountryData();
+
+            function getAllCountryData() {
+                result = [];
+                for(c in allCountryDataMap) {
+                    currObj = {countryName : c, colorToUse : allCountryDataMap[c].colorToUse}
+                    result.push(currObj)
+                }
+                return result;
+            }
+
             var selectedCountries = [];
 
             d3.json(finalDataUrl, function (error, inp_data) {
@@ -102,7 +105,6 @@
                     parseDate(inp_data["dateExtent"]["end_date"])
                 ]
                 x.domain(xExtent);
-
 
                 yExtent = [
                     inp_data["dailyCaseExtent"]["min_case_count"],
@@ -166,6 +168,7 @@
                     .append("input")
                         .attr("type", "checkbox")
                         .attr("checked", true)                        
+                        .attr("class", "countryCB-checkbox")                        
                         .attr("id", function(d, i) { return  "countryCB-" + d.countryName })
                     .call(updateAllSelectedCountries)
                 ;
@@ -179,6 +182,8 @@
                             return d.countryName;
                         })
                         .style("color", function(d) { return d.colorToUse;})
+                
+                d3.selectAll(".countryCB-checkbox").on("change", updateAllSelectedCountries)
 
                 /* Commenting out the legend. Need a better way
                 svg.append('g')
@@ -296,34 +301,28 @@
             animatePath(selectedCountries)}
         );
         d3.select('#reset').on("click", hideAllLines);
-                        
+
+
+
         function animatePath(checkboxTrueCountries) {
             //animation
-            checkboxTrueCountries.forEach(function(selectedCountryName) {
-                // TODO change it to dictionary
-                var countryObj = null;
-                allCountryData.forEach(function(d) {
-                    if (d.countryName == selectedCountryName) {
-                        countryObj = d;
-                        return;
-                    }
-                })
-
-                if (countryObj == null) {
-                    msg = selectedCountryName + " doesn't exist in list!!";
-                    console.error(msg)
-                    throw msg;
-                }
-
+            allCountryData.forEach(function(countryObj) {
                 countryName = countryObj.countryName
                 pathObj = d3.select("#covidpath-" + countryName)
                 var totalLength = pathObj.node().getTotalLength()
                 pathObj.attr("stroke-dasharray", totalLength) 
                 .attr("stroke-dashoffset", totalLength)
+                .style("opacity", function (d, i) {
+                    console.log(checkboxTrueCountries)
+                    if(checkboxTrueCountries.includes(countryName)) {
+                        return 1
+                    } else {
+                        return 0.1
+                    }
+                })
                 .transition()
                 .duration(800)
                 .attr("stroke-dashoffset", 0)
-                .style("opacity", 1)
             })
         }
 
@@ -334,17 +333,22 @@
         function updateAllSelectedCountries() {
             result = []
             allCountryData.forEach(function (countryObj) {
-                var currCbElem = d3.select("#countryCB-" + countryObj.countryName)
-                var pref = "(" + countryObj.countryName + ")"
-                if (currCbElem.node().checked) {
+                var currPathElem = d3.select("#covidpath-" + countryObj.countryName)
+                if (isCountryChecked(countryObj.countryName)) {
+                    currPathElem.style("opacity", 1)
                     result.push(countryObj.countryName)
                 } else {
+                    // change opacity of unselected country
+                    currPathElem.style("opacity", 0.1)
                 }
             })
             selectedCountries = result
         }
-        
 
+        function isCountryChecked(contryName) {
+            var currCbElem = d3.select("#countryCB-" + contryName)
+            return currCbElem.node().checked;
+        }
         
         </script>
     </body>
