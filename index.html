@@ -2,6 +2,9 @@
 <meta charset="utf-8">
 <html>
     <head>
+        <title>
+            Covid-19 per-day cases
+        </title>
         <style> /* set the CSS */
 
             .line {
@@ -15,8 +18,11 @@
                 margin-left: 6px;
                 position: absolute;
             }
-            
-            </style>
+            .overlay {
+	            fill: none;
+	            pointer-events: all;
+            }            
+        </style>
     </head>
     <body>
         <button id="start">Start Time Animation</button>
@@ -24,16 +30,11 @@
         <script src="https://d3js.org/d3.v4.min.js"></script>
         
         <script>
-
-
-
             if (document.URL.includes("localhost:8000")) {
                 var finalDataUrl = "http://localhost:8000/cs498Dv/final_data.json";
             } else {
                 var finalDataUrl = "https://raw.githubusercontent.com/kmad1729/cs498Dv/master/final_data.json";
             }
-
-            var hahaha = {};
                             
             var linesList = []
             var massagedLineData = []
@@ -43,11 +44,18 @@
             var width = 900 - margin.left - margin.right;
             var height = 500 - margin.top - margin.bottom;
             var svg = d3.select("body").append("svg")
-                    .attr("width", width + margin.left + margin.right)
-                    .attr("height", height + margin.top + margin.bottom)
-                    .append("g")
-                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")"); 
-
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")"); 
+            var svgContainer = d3.select("svg")
+            var overlay = svgContainer.append("rect")
+                .attr("class", "overlay")
+                .attr("x", margin.left)
+                .attr("y", margin.top)
+                .attr("width", width)
+                .attr("height", height);
+            
             var x = d3.scaleTime()
                     .range([0, width]);
             var y = d3.scaleLinear().range([height, 0]);
@@ -66,7 +74,9 @@
             var selectedCountries = [];
 
             d3.json(finalDataUrl, function (error, inp_data) {
-                var parseDate = d3.timeParse("%m/%d/%y");
+                var parseDate = d3.timeParse("%m/%d/%y"),
+                    bisectDate = d3.bisector(d => d.date).left
+                    ;
 
                 xExtent = [
                     parseDate(inp_data["dateExtent"]["start_date"]),
@@ -100,7 +110,6 @@
                 massagedLineData = inp_data["date_to_country_mapping"]
                 massagedLineData.forEach(function(singleDayData) {
                     singleDayData.date = parseDate(singleDayData.date)
-                    hahaha = singleDayData.date
                 });
 
                 // creating lines for all countries
@@ -177,11 +186,50 @@
                     .style("fill", function(d, i) {
                         colorToUse = d.colorToUse
                         return colorToUse;
-                    });
+                });
 
-                    animatePath(selectedCountries);
+                animatePath(selectedCountries);
+                
+                var focus = svgContainer.append("g")
+                    .attr("class", "focus")
+                    .style("display", "none")
 
-        });
+                // hover over functionality
+                svgContainer.selectAll(".overlay")
+                    .on("mouseover", function() {
+                        focus.style("display", null)
+                    })
+                    .on("mouseout", function() {
+                        focus.style("display", "none")
+                    })
+                    .on("mousemove", function() {
+                        mousemove()
+                    })
+
+                focus.append("line").attr("class", "lineHover")
+		            .style("stroke", "#999")
+                    .attr("stroke-width", 1)
+                    .style("shape-rendering", "crispEdges")
+                    .style("opacity", 0.5)
+                    .attr("y1", -height + 50)
+                    .attr("y2",50)
+
+                function mousemove() {
+                    mouseCoords = d3.mouse(d3.event.currentTarget)
+                    var x0 = x.invert(mouseCoords[0]-50),
+                        i = bisectDate(massagedLineData, x0, 1),
+                        d0 = massagedLineData[i-1],
+                        d1 = massagedLineData[i],
+                        d = x0 - d0.date > d1.date -x0 ? d1 : d0 //figuring out which date the mouse is closer to.
+                    ;
+                    console.log("x = " + mouseCoords[0])
+                    console.log("d = " + d.date)
+
+                    focus.select(".lineHover")
+                        .attr("transform", "translate(" + (x(d.date)  + 50) + "," + height + ")");
+                }
+
+            });
 
         d3.select('#start').on("click", function() {
             hideAllLines()
