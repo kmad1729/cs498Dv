@@ -9,10 +9,18 @@
               stroke: steelblue;
               stroke-width: 2px;
             }
+
+            button {
+                margin-top: 6px;
+                margin-left: 6px;
+                position: absolute;
+            }
             
             </style>
     </head>
     <body>
+        <button id="start">Start Time Animation</button>
+        <button id="reset" style="margin-left: 150px">Reset</button>
         <script src="https://d3js.org/d3.v4.min.js"></script>
         
         <script>
@@ -31,7 +39,7 @@
             var massagedLineData = []
             var dataToUseInGraph = {};
             var currLine = {}
-            var margin = {top: 20, right: 20, bottom: 30, left: 50};
+            var margin = {top: 50, right: 50, bottom: 30, left: 50};
             var width = 900 - margin.left - margin.right;
             var height = 500 - margin.top - margin.bottom;
             var svg = d3.select("body").append("svg")
@@ -45,13 +53,8 @@
             var y = d3.scaleLinear().range([height, 0]);
             
             // d3.json(finalDataUrl).then(inp_data => chart(inp_data));
-            
-            d3.json(finalDataUrl, function (error, inp_data) {
-                var parseDate = d3.timeParse("%m/%d/%y");
-
-
                             
-                var selectedCountries = [
+            var selectedCountries = [
                     { countryName: "US", colorToUse: "red"},
                     {countryName: "France",  colorToUse: "dodgerblue" },
                     {countryName: "Germany",  colorToUse: "orange" },
@@ -60,7 +63,10 @@
                     {countryName: "India",  colorToUse: "pink" },
                     {countryName: "Brazil",  colorToUse: "darkkhaki" }
                 ]
-                
+
+            d3.json(finalDataUrl, function (error, inp_data) {
+                var parseDate = d3.timeParse("%m/%d/%y");
+
                 xExtent = [
                     parseDate(inp_data["dateExtent"]["start_date"]),
                     parseDate(inp_data["dateExtent"]["end_date"])
@@ -78,7 +84,8 @@
                 svg.append("g")
                     .attr("transform", "translate(0," + height + ")")
                     .call(d3.axisBottom(x));
-                    
+                
+                // Add the Y Axis
                 svg.append("g")
                     .attr("class", "y axis")
                     .call(d3.axisLeft(y))
@@ -87,7 +94,7 @@
                     .attr("y", 6)
                     .attr("dy", ".71em")
                     .style("text-anchor", "end")
-                    .text("return time(ms)");
+                    .text("Case Count");
 
                 massagedLineData = inp_data["date_to_country_mapping"]
                 massagedLineData.forEach(function(singleDayData) {
@@ -116,38 +123,34 @@
                         .attr("class", "line")
                         .attr("id", "covidpath-" + countryName)
                         .style("stroke", colorToUse)
-                        .attr("d", currLine)  
+                        .attr("d", currLine)
                     ;
-
-                    /*
-                    svg.append('g').selectAll("text")
-                        .data(massagedLineData)
-                        .enter()
-                        .append('text')
-                        .html(countryName)
-                        .attr("id", function(d, i) {
-                            return "text-id" + countryName + "-" + i;
-                        })
-                        .attr("x", function(d) {
-                            return 50;
-                        })
-                        .attr("y", function(d, i) {
-                            return 50 + (20*i)
-                        })
-                        .style("opacity", function(d, i) {
-                            if (i == 0) {
-                                return 1;
-                            } else {
-                                //console.log("i == " + i)
-
-                                return 1;
-                            }
-                        })
-                        .style("fill", colorToUse);
-                        */
-
                 });
 
+                // add checkboxes
+                d3.select("body").selectAll("input")
+                    .data(selectedCountries)
+                    .enter()
+                    .append("div")
+                        .attr("class", "countryCB")
+                    .append("input")
+                        .attr("type", "checkbox")
+                        .attr("checked", true)                        
+                        .attr("id", function(d, i) { return  "countryCB-" + d.countryName })
+                ;
+                
+                d3.selectAll(".countryCB")
+                    .append("label")
+                        .attr("for", function(d, i) {
+                            console.log(d);
+                            return "countryCB-" + d.countryName
+                        })
+                        .text(function(d) {
+                            return d.countryName;
+                        })
+                        .style("color", function(d) { return d.colorToUse;})
+
+                
                 svg.append('g')
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
                     .selectAll("text")
@@ -174,21 +177,31 @@
                         return colorToUse;
                     });
 
-                //animation
-                selectedCountries.forEach(function(countryObj) {
-                    countryName = countryObj.countryName
-                    pathObj = d3.select("#covidpath-" + countryName)
-                    var totalLength = pathObj.node().getTotalLength()
-                    pathObj.attr("stroke-dasharray", totalLength) 
-                    .attr("stroke-dashoffset", totalLength)
-                    .transition()
-                    .duration(5000)
-                    .attr("stroke-dashoffset", 0)
-
-                });  
-
+                    animatePath(selectedCountries);
 
         });
+
+        d3.select('#start').on("click", function() {animatePath(selectedCountries)});
+        d3.select('#reset').on("click", hideAllLines);
+                        
+        function animatePath(checkboxTrueCountries) {
+            //animation
+            checkboxTrueCountries.forEach(function(countryObj) {
+                countryName = countryObj.countryName
+                pathObj = d3.select("#covidpath-" + countryName)
+                var totalLength = pathObj.node().getTotalLength()
+                pathObj.attr("stroke-dasharray", totalLength) 
+                .attr("stroke-dashoffset", totalLength)
+                .transition()
+                .duration(5000)
+                .attr("stroke-dashoffset", 0)
+                .style("opacity", 1)
+            })
+        }
+
+        function hideAllLines() {
+            d3.selectAll('.line').style("opacity", 0)
+        }
 
         
         </script>
