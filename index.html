@@ -110,7 +110,7 @@
                             return y(d[countryName]);
                         })
                         ;
-
+                    
                     svg.append("path")
                         .data([massagedLineData])
                         .attr("class", "line")
@@ -119,9 +119,60 @@
                         .attr("d", currLine)  
                     ;
 
+                    /*
+                    svg.append('g').selectAll("text")
+                        .data(massagedLineData)
+                        .enter()
+                        .append('text')
+                        .html(countryName)
+                        .attr("id", function(d, i) {
+                            return "text-id" + countryName + "-" + i;
+                        })
+                        .attr("x", function(d) {
+                            return 50;
+                        })
+                        .attr("y", function(d, i) {
+                            return 50 + (20*i)
+                        })
+                        .style("opacity", function(d, i) {
+                            if (i == 0) {
+                                return 1;
+                            } else {
+                                //console.log("i == " + i)
 
+                                return 1;
+                            }
+                        })
+                        .style("fill", colorToUse);
+                        */
 
                 });
+
+                svg.append('g')
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+                    .selectAll("text")
+                    .data(selectedCountries)
+                    .enter()
+                    .append("text")
+                    .attr("id", function(d, i) {
+                        countryName = d.countryName
+                        return "text-id" + countryName + "-" + i;
+                    })
+                    .attr("x", function(d) {
+                        return 50;
+                    })
+                    .attr("y", function(d, i) {
+                        return 50 + (20*i)
+                    })
+                    .html(function(d, i) {
+                        countryName = d.countryName
+                        return countryName;
+                    })
+                    .style("opacity", 1)
+                    .style("fill", function(d, i) {
+                        colorToUse = d.colorToUse
+                        return colorToUse;
+                    });
 
                 //animation
                 selectedCountries.forEach(function(countryObj) {
