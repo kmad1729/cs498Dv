@@ -48,11 +48,7 @@
             
             d3.json(finalDataUrl, function (error, inp_data) {
                 var parseDate = d3.timeParse("%m/%d/%y");
-                   
-                svg.append("g")
-                    .attr("class", "x axis")
-                    .attr("transform", "translate(0," + height + ")")
-                    .call(d3.axisBottom(x).ticks(d3.timeDay));
+
 
                             
                 var selectedCountries = [
@@ -60,7 +56,7 @@
                     {countryName: "France",  colorToUse: "dodgerblue" },
                     {countryName: "Germany",  colorToUse: "orange" },
                     {countryName: "Italy",  colorToUse: "grey" },
-                    {countryName: "United Kingdom",  colorToUse: "cyan" },
+                    {countryName: "United_Kingdom",  colorToUse: "cyan" },
                     {countryName: "India",  colorToUse: "pink" },
                     {countryName: "Brazil",  colorToUse: "darkkhaki" }
                 ]
@@ -82,6 +78,7 @@
                 svg.append("g")
                     .attr("transform", "translate(0," + height + ")")
                     .call(d3.axisBottom(x));
+                    
                 svg.append("g")
                     .attr("class", "y axis")
                     .call(d3.axisLeft(y))
@@ -103,23 +100,46 @@
                     countryName = countryObj.countryName
                     colorToUse = countryObj.colorToUse
 
+                    var focusText = svg.append('g').append("text");
+
                     currLine = d3.line()
                         .x(function(d) {
                             return x(d.date);
                         })
                         .y(function(d) {
                             return y(d[countryName]);
-                        });
+                        })
+                        ;
 
                     svg.append("path")
                         .data([massagedLineData])
                         .attr("class", "line")
+                        .attr("id", "covidpath-" + countryName)
                         .style("stroke", colorToUse)
-                        .attr("d", currLine);                    
+                        .attr("d", currLine)  
                     ;
-                    })
+
+
+
+                });
+
+                //animation
+                selectedCountries.forEach(function(countryObj) {
+                    countryName = countryObj.countryName
+                    pathObj = d3.select("#covidpath-" + countryName)
+                    var totalLength = pathObj.node().getTotalLength()
+                    pathObj.attr("stroke-dasharray", totalLength) 
+                    .attr("stroke-dashoffset", totalLength)
+                    .transition()
+                    .duration(5000)
+                    .attr("stroke-dashoffset", 0)
+
+                });  
+
 
         });
+
+        
         </script>
     </body>
 </html> 

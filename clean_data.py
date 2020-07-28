@@ -40,7 +40,7 @@ country_list = {
             "lockdown_date": datetime(year=2020, month=3, day=23).strftime(filewide_dateFormat),
             "case_per_capita_on_data" : {},
         },
-        "United Kingdom" : {
+        "United_Kingdom" : {
             "population": int("67,530,172".replace(",", '')),
             "lockdown_date": datetime(year=2020, month=3, day=23).strftime(filewide_dateFormat), 
             "case_per_capita_on_data" : {},
@@ -65,11 +65,12 @@ country_list = {
 date_to_country_mapping = {}
 
 for country_name in country_list:
+    country_name_with_space = country_name.replace("_", " ")
     with open(time_series_data_list) as f:
         reader = csv.DictReader(f)
         for row in reader:
-            if row['Country/Region'] == country_name and row['Province/State'] == '':
-                print(f"Found country {country_name}!! Lat = {row['Lat']} Long = {row['Long']}")
+            if row['Country/Region'] == country_name_with_space and row['Province/State'] == '':
+                print(f"Found country {country_name_with_space}!! Lat = {row['Lat']} Long = {row['Long']}")
                 break
 
     # datetime.strptime("1/23/20", filewide_dateFormat)
