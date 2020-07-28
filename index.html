@@ -21,6 +21,13 @@
             .overlay {
 	            fill: none;
 	            pointer-events: all;
+            }
+            .lineHoverText {
+                text-shadow:
+                -2px -2px 0 #fff,
+                2px -2px 0 #fff,
+                -2px 2px 0 #fff,
+                2px 2px 0 #fff;
             }            
         </style>
     </head>
@@ -35,7 +42,8 @@
             } else {
                 var finalDataUrl = "https://raw.githubusercontent.com/kmad1729/cs498Dv/master/final_data.json";
             }
-                            
+            
+            var myGlobalVar;
             var linesList = []
             var massagedLineData = []
             var dataToUseInGraph = {};
@@ -59,6 +67,7 @@
             var x = d3.scaleTime()
                     .range([0, width]);
             var y = d3.scaleLinear().range([height, 0]);
+            var z = d3.scaleOrdinal(d3.schemeCategory10);
             
             // d3.json(finalDataUrl).then(inp_data => chart(inp_data));
                             
@@ -67,14 +76,24 @@
                 {countryName: "France",  colorToUse: "dodgerblue" },
                 {countryName: "Germany",  colorToUse: "orange" },
                 {countryName: "Italy",  colorToUse: "grey" },
-                {countryName: "United_Kingdom",  colorToUse: "cyan" },
-                {countryName: "India",  colorToUse: "pink" },
+                {countryName: "United_Kingdom",  colorToUse: "turquoise" },
+                {countryName: "India",  colorToUse: "green" },
                 {countryName: "Brazil",  colorToUse: "darkkhaki" }
             ]
+            var allCountryDataMap = {
+                "US":{colorToUse: "red"},
+                "France":{colorToUse: "dodgerblue"},
+                "Germany":{colorToUse: "orange"},
+                "Italy":{colorToUse: "grey"},
+                "United_Kingdom":{colorToUse: "turquoise"},
+                "India":{colorToUse: "green"},
+                "Brazil":{colorToUse: "darkkhaki"},
+            }
             var selectedCountries = [];
 
             d3.json(finalDataUrl, function (error, inp_data) {
                 var parseDate = d3.timeParse("%m/%d/%y"),
+                    formatDate = d3.timeFormat("%Y-%m-%d"),
                     bisectDate = d3.bisector(d => d.date).left
                     ;
 
@@ -161,7 +180,7 @@
                         })
                         .style("color", function(d) { return d.colorToUse;})
 
-                
+                /* Commenting out the legend. Need a better way
                 svg.append('g')
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
                     .selectAll("text")
@@ -187,6 +206,7 @@
                         colorToUse = d.colorToUse
                         return colorToUse;
                 });
+                */
 
                 animatePath(selectedCountries);
                 
@@ -225,6 +245,47 @@
 
                     focus.select(".lineHover")
                         .attr("transform", "translate(" + (x(d.date)  + 50) + "," + height + ")");
+
+
+                    focus.append("text").attr("class", "lineHoverDate")
+                        .attr("text-anchor", "middle")
+                        .attr("font-size", 12);
+                        
+                    focus.select(".lineHoverDate")
+                            .attr("transform", "translate(" + (x(d.date)  + 50) + "," + (height + margin.bottom + 50) + ")")
+                            .text(formatDate(d.date));
+                            
+                    tooltip(d)
+                }
+
+                function tooltip(dataObj) {
+                    // get all the selected countries and create a mapping of {name: "Cname", cases: "casecount"}
+                    resultDataToToolTip = []
+                    selectedCountries.forEach(function(cName) {
+                        currObj = {name: cName, cases: dataObj[cName]}
+                        resultDataToToolTip.push(currObj)
+                    });
+
+                    resultDataToToolTip.sort(function(a,b) {
+                        return b.cases - a.cases
+                    })
+                    focus.selectAll(".lineHoverText").remove()
+                    var labels = focus.selectAll(".lineHoverText")
+                        .data(resultDataToToolTip)
+                    labels.enter().append("text")
+                        .attr("class", "lineHoverText")
+                        .style("fill", d => allCountryDataMap[d.name].colorToUse)
+                        .attr("text-anchor", "start")
+                        .attr("font-size", 12)
+                        .attr("dy", function(d, i) {return 1 + i*2 + "em"})
+                        .merge(labels)
+                    
+                    focus.selectAll(".lineHoverText")
+                        .attr("transform", "translate(" + (x(dataObj.date)) + "," + height / 2.5 + ")")
+                        .text(function(d, i) {
+                            return d.name + " " + d.cases;
+                        });
+
                 }
 
             });
