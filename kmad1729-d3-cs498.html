@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+    <head>
+        <style> /* set the CSS */
+
+            .line {
+              fill: none;
+              stroke: steelblue;
+              stroke-width: 2px;
+            }
+            
+            </style>
+    </head>
+    <body>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        
+        <script>
+
+
+            var finalDataUrl = "http://localhost:8000/cs498Dv/final_data.json";
+
+
+
+            var hahaha = {};
+                            
+            var linesList = []
+            var massagedLineData = []
+            var dataToUseInGraph = {};
+            var currLine = {}
+            var margin = {top: 20, right: 20, bottom: 30, left: 50};
+            var width = 900 - margin.left - margin.right;
+            var height = 500 - margin.top - margin.bottom;
+            var svg = d3.select("body").append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                    .append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")"); 
+
+            var x = d3.scaleTime()
+                    .range([0, width]);
+            var y = d3.scaleLinear().range([height, 0]);
+            
+            // d3.json(finalDataUrl).then(inp_data => chart(inp_data));
+            
+            d3.json(finalDataUrl, function (error, inp_data) {
+                var parseDate = d3.timeParse("%m/%d/%y");
+                   
+                svg.append("g")
+                    .attr("class", "x axis")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(x).ticks(d3.timeDay));
+
+                            
+                var selectedCountries = [
+                    { countryName: "US", colorToUse: "red"},
+                    {countryName: "France",  colorToUse: "dodgerblue" },
+                    {countryName: "Germany",  colorToUse: "orange" },
+                    {countryName: "Italy",  colorToUse: "grey" },
+                    {countryName: "United Kingdom",  colorToUse: "cyan" },
+                    {countryName: "India",  colorToUse: "pink" },
+                    {countryName: "Brazil",  colorToUse: "darkkhaki" }
+                ]
+                
+                xExtent = [
+                    parseDate(inp_data["dateExtent"]["start_date"]),
+                    parseDate(inp_data["dateExtent"]["end_date"])
+                ]
+                x.domain(xExtent);
+
+
+                yExtent = [
+                    inp_data["dailyCaseExtent"]["min_case_count"],
+                    inp_data["dailyCaseExtent"]["max_case_count"]
+                ] 
+                y.domain(yExtent);
+
+                // Add the X Axis
+                svg.append("g")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(x));
+                svg.append("g")
+                    .attr("class", "y axis")
+                    .call(d3.axisLeft(y))
+                    .append("text")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", 6)
+                    .attr("dy", ".71em")
+                    .style("text-anchor", "end")
+                    .text("return time(ms)");
+
+                massagedLineData = inp_data["date_to_country_mapping"]
+                massagedLineData.forEach(function(singleDayData) {
+                    singleDayData.date = parseDate(singleDayData.date)
+                    hahaha = singleDayData.date
+                });
+
+                selectedCountries.forEach(function(countryObj) {
+
+                    countryName = countryObj.countryName
+                    colorToUse = countryObj.colorToUse
+
+                    currLine = d3.line()
+                        .x(function(d) {
+                            console.log("d-->" + x(d.date))
+                            return x(d.date);
+                        })
+                        .y(function(d) {
+                            return y(d[countryName]);
+                        });
+
+                    svg.append("path")
+                        .data([massagedLineData])
+                        .attr("class", "line")
+                        .style("stroke", colorToUse)
+                        .attr("d", currLine);                    
+                    ;
+                    })
+
+        });
+        </script>
+    </body>
+</html> 

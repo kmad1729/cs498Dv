@@ -1,0 +1,16 @@
+Notes about the plan
+
+1) Select a list of 5 countries
+2) For each country, calculate the per-capita case count for each day
+3) Set the date for country-wide lockdown
+4) animate the case count on a graph with x-axis as time and y-axis as the case per capita
+5) put a dashed line after a country wide lockdown
+
+6) see if the case rate came down
+
+https://github.com/CSSEGISandData/COVID-19
+
+#data to use = https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv
+#lockdown dates = https://en.wikipedia.org/wiki/COVID-19_pandemic_lockdowns
+#total pop = https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)
+
