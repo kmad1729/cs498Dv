@@ -1,0 +1,1872 @@
+{
+  "dateExtent": {
+    "start_date": "01/23/20",
+    "end_date": "07/26/20"
+  },
+  "dailyCaseExtent": {
+    "min_case_count": -2512,
+    "max_case_count": 90000
+  },
+  "date_to_country_mapping": [
+    {
+      "date": "1/23/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "1/24/20",
+      "US": 1,
+      "France": 2,
+      "Germany": 0,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "1/25/20",
+      "US": 0,
+      "France": 1,
+      "Germany": 0,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "1/26/20",
+      "US": 3,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "1/27/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 1,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "1/28/20",
+      "US": 0,
+      "France": 1,
+      "Germany": 3,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "1/29/20",
+      "US": 0,
+      "France": 1,
+      "Germany": 0,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "1/30/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 1,
+      "Brazil": 0
+    },
+    {
+      "date": "1/31/20",
+      "US": 2,
+      "France": 0,
+      "Germany": 1,
+      "United Kingdom": 2,
+      "Italy": 2,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/1/20",
+      "US": 1,
+      "France": 1,
+      "Germany": 3,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/2/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 2,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 1,
+      "Brazil": 0
+    },
+    {
+      "date": "2/3/20",
+      "US": 3,
+      "France": 0,
+      "Germany": 2,
+      "United Kingdom": 6,
+      "Italy": 0,
+      "India": 1,
+      "Brazil": 0
+    },
+    {
+      "date": "2/4/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/5/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 1,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/6/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/7/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 1,
+      "United Kingdom": 0,
+      "Italy": 1,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/8/20",
+      "US": 0,
+      "France": 5,
+      "Germany": 0,
+      "United Kingdom": 4,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/9/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 1,
+      "United Kingdom": 1,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/10/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/11/20",
+      "US": 1,
+      "France": 0,
+      "Germany": 2,
+      "United Kingdom": 1,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/12/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 1,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/13/20",
+      "US": 1,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 1,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/14/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 1,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/15/20",
+      "US": 0,
+      "France": 1,
+      "Germany": 0,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/16/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/17/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 1,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/18/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 0,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/19/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 1,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/20/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 2,
+      "Italy": 0,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/21/20",
+      "US": 2,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 1,
+      "Italy": 17,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/22/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 0,
+      "Italy": 42,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/23/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 5,
+      "Italy": 93,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/24/20",
+      "US": 0,
+      "France": 0,
+      "Germany": 0,
+      "United Kingdom": 2,
+      "Italy": 74,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/25/20",
+      "US": 0,
+      "France": 2,
+      "Germany": 1,
+      "United Kingdom": 4,
+      "Italy": 93,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/26/20",
+      "US": 0,
+      "France": 4,
+      "Germany": 10,
+      "United Kingdom": 3,
+      "Italy": 131,
+      "India": 0,
+      "Brazil": 1
+    },
+    {
+      "date": "2/27/20",
+      "US": 1,
+      "France": 20,
+      "Germany": 19,
+      "United Kingdom": 7,
+      "Italy": 202,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/28/20",
+      "US": 0,
+      "France": 19,
+      "Germany": 2,
+      "United Kingdom": 12,
+      "Italy": 233,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "2/29/20",
+      "US": 8,
+      "France": 43,
+      "Germany": 31,
+      "United Kingdom": 5,
+      "Italy": 240,
+      "India": 0,
+      "Brazil": 1
+    },
+    {
+      "date": "3/1/20",
+      "US": 6,
+      "France": 30,
+      "Germany": 51,
+      "United Kingdom": 33,
+      "Italy": 566,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "3/2/20",
+      "US": 23,
+      "France": 61,
+      "Germany": 29,
+      "United Kingdom": 40,
+      "Italy": 342,
+      "India": 2,
+      "Brazil": 0
+    },
+    {
+      "date": "3/3/20",
+      "US": 20,
+      "France": 13,
+      "Germany": 37,
+      "United Kingdom": 55,
+      "Italy": 466,
+      "India": 0,
+      "Brazil": 0
+    },
+    {
+      "date": "3/4/20",
+      "US": 31,
+      "France": 81,
+      "Germany": 66,
+      "United Kingdom": 56,
+      "Italy": 587,
+      "India": 23,
+      "Brazil": 2
+    },
+    {
+      "date": "3/5/20",
+      "US": 70,
+      "France": 92,
+      "Germany": 220,
+      "United Kingdom": 49,
+      "Italy": 769,
+      "India": 2,
+      "Brazil": 0
+    },
+    {
+      "date": "3/6/20",
+      "US": 48,
+      "France": 276,
+      "Germany": 188,
+      "United Kingdom": 79,
+      "Italy": 778,
+      "India": 1,
+      "Brazil": 9
+    },
+    {
+      "date": "3/7/20",
+      "US": 115,
+      "France": 296,
+      "Germany": 129,
+      "United Kingdom": 55,
+      "Italy": 1247,
+      "India": 3,
+      "Brazil": 0
+    },
+    {
+      "date": "3/8/20",
+      "US": 114,
+      "France": 177,
+      "Germany": 241,
+      "United Kingdom": 54,
+      "Italy": 1492,
+      "India": 5,
+      "Brazil": 7
+    },
+    {
+      "date": "3/9/20",
+      "US": 68,
+      "France": 83,
+      "Germany": 136,
+      "United Kingdom": 147,
+      "Italy": 1797,
+      "India": 4,
+      "Brazil": 5
+    },
+    {
+      "date": "3/10/20",
+      "US": 192,
+      "France": 575,
+      "Germany": 281,
+      "United Kingdom": 258,
+      "Italy": 977,
+      "India": 13,
+      "Brazil": 6
+    },
+    {
+      "date": "3/11/20",
+      "US": 398,
+      "France": 497,
+      "Germany": 451,
+      "United Kingdom": 411,
+      "Italy": 2313,
+      "India": 6,
+      "Brazil": 7
+    },
+    {
+      "date": "3/12/20",
+      "US": 452,
+      "France": 0,
+      "Germany": 170,
+      "United Kingdom": 489,
+      "Italy": 2651,
+      "India": 11,
+      "Brazil": 14
+    },
+    {
+      "date": "3/13/20",
+      "US": 596,
+      "France": 1380,
+      "Germany": 1597,
+      "United Kingdom": 479,
+      "Italy": 2547,
+      "India": 9,
+      "Brazil": 99
+    },
+    {
+      "date": "3/14/20",
+      "US": 713,
+      "France": 808,
+      "Germany": 910,
+      "United Kingdom": 364,
+      "Italy": 3497,
+      "India": 20,
+      "Brazil": 0
+    },
+    {
+      "date": "3/15/20",
+      "US": 98,
+      "France": 30,
+      "Germany": 1210,
+      "United Kingdom": 442,
+      "Italy": 3590,
+      "India": 11,
+      "Brazil": 11
+    },
+    {
+      "date": "3/16/20",
+      "US": 1392,
+      "France": 2134,
+      "Germany": 1477,
+      "United Kingdom": 612,
+      "Italy": 3233,
+      "India": 6,
+      "Brazil": 38
+    },
+    {
+      "date": "3/17/20",
+      "US": 1781,
+      "France": 1019,
+      "Germany": 1985,
+      "United Kingdom": 768,
+      "Italy": 3526,
+      "India": 23,
+      "Brazil": 121
+    },
+    {
+      "date": "3/18/20",
+      "US": 2776,
+      "France": 1391,
+      "Germany": 3070,
+      "United Kingdom": 999,
+      "Italy": 4207,
+      "India": 14,
+      "Brazil": 51
+    },
+    {
+      "date": "3/19/20",
+      "US": 5240,
+      "France": 1828,
+      "Germany": 2993,
+      "United Kingdom": 1055,
+      "Italy": 5322,
+      "India": 38,
+      "Brazil": 249
+    },
+    {
+      "date": "3/20/20",
+      "US": 5322,
+      "France": 1741,
+      "Germany": 4528,
+      "United Kingdom": 1254,
+      "Italy": 5986,
+      "India": 50,
+      "Brazil": 172
+    },
+    {
+      "date": "3/21/20",
+      "US": 6346,
+      "France": 1670,
+      "Germany": 2365,
+      "United Kingdom": 1197,
+      "Italy": 6557,
+      "India": 86,
+      "Brazil": 228
+    },
+    {
+      "date": "3/22/20",
+      "US": 7936,
+      "France": 1736,
+      "Germany": 2660,
+      "United Kingdom": 1376,
+      "Italy": 5560,
+      "India": 66,
+      "Brazil": 525
+    },
+    {
+      "date": "3/23/20",
+      "US": 10089,
+      "France": 3838,
+      "Germany": 4183,
+      "United Kingdom": 2335,
+      "Italy": 4789,
+      "India": 103,
+      "Brazil": 378
+    },
+    {
+      "date": "3/24/20",
+      "US": 10262,
+      "France": 2448,
+      "Germany": 3930,
+      "United Kingdom": 2371,
+      "Italy": 5249,
+      "India": 37,
+      "Brazil": 323
+    },
+    {
+      "date": "3/25/20",
+      "US": 11943,
+      "France": 2929,
+      "Germany": 4337,
+      "United Kingdom": 2693,
+      "Italy": 5210,
+      "India": 121,
+      "Brazil": 307
+    },
+    {
+      "date": "3/26/20",
+      "US": 18036,
+      "France": 3922,
+      "Germany": 6615,
+      "United Kingdom": 3084,
+      "Italy": 6203,
+      "India": 70,
+      "Brazil": 431
+    },
+    {
+      "date": "3/27/20",
+      "US": 18185,
+      "France": 3809,
+      "Germany": 6933,
+      "United Kingdom": 3201,
+      "Italy": 5909,
+      "India": 160,
+      "Brazil": 432
+    },
+    {
+      "date": "3/28/20",
+      "US": 19793,
+      "France": 4611,
+      "Germany": 6824,
+      "United Kingdom": 2822,
+      "Italy": 5974,
+      "India": 100,
+      "Brazil": 487
+    },
+    {
+      "date": "3/29/20",
+      "US": 19136,
+      "France": 2599,
+      "Germany": 4400,
+      "United Kingdom": 2857,
+      "Italy": 5217,
+      "India": 37,
+      "Brazil": 352
+    },
+    {
+      "date": "3/30/20",
+      "US": 21502,
+      "France": 4376,
+      "Germany": 4790,
+      "United Kingdom": 4273,
+      "Italy": 4050,
+      "India": 227,
+      "Brazil": 323
+    },
+    {
+      "date": "3/31/20",
+      "US": 26017,
+      "France": 7578,
+      "Germany": 4923,
+      "United Kingdom": 4515,
+      "Italy": 4053,
+      "India": 146,
+      "Brazil": 1138
+    },
+    {
+      "date": "4/1/20",
+      "US": 25481,
+      "France": 4861,
+      "Germany": 6064,
+      "United Kingdom": 4914,
+      "Italy": 4782,
+      "India": 601,
+      "Brazil": 1119
+    },
+    {
+      "date": "4/2/20",
+      "US": 30405,
+      "France": 2116,
+      "Germany": 6922,
+      "United Kingdom": 4865,
+      "Italy": 4668,
+      "India": 545,
+      "Brazil": 1208
+    },
+    {
+      "date": "4/3/20",
+      "US": 31937,
+      "France": 5233,
+      "Germany": 6365,
+      "United Kingdom": 4915,
+      "Italy": 4585,
+      "India": 24,
+      "Brazil": 1012
+    },
+    {
+      "date": "4/4/20",
+      "US": 33152,
+      "France": 4267,
+      "Germany": 4933,
+      "United Kingdom": 4020,
+      "Italy": 4805,
+      "India": 515,
+      "Brazil": 1304
+    },
+    {
+      "date": "4/5/20",
+      "US": 27874,
+      "France": 1873,
+      "Germany": 4031,
+      "United Kingdom": 3594,
+      "Italy": 4316,
+      "India": 506,
+      "Brazil": 770
+    },
+    {
+      "date": "4/6/20",
+      "US": 29642,
+      "France": 3912,
+      "Germany": 3251,
+      "United Kingdom": 5275,
+      "Italy": 3599,
+      "India": 1190,
+      "Brazil": 1031
+    },
+    {
+      "date": "4/7/20",
+      "US": 30777,
+      "France": 3777,
+      "Germany": 4289,
+      "United Kingdom": 5450,
+      "Italy": 3039,
+      "India": 533,
+      "Brazil": 1873
+    },
+    {
+      "date": "4/8/20",
+      "US": 31694,
+      "France": 3881,
+      "Germany": 5633,
+      "United Kingdom": 5129,
+      "Italy": 3836,
+      "India": 605,
+      "Brazil": 2136
+    },
+    {
+      "date": "4/9/20",
+      "US": 34756,
+      "France": 4286,
+      "Germany": 4885,
+      "United Kingdom": 4852,
+      "Italy": 4204,
+      "India": 809,
+      "Brazil": 1922
+    },
+    {
+      "date": "4/10/20",
+      "US": 33501,
+      "France": 4342,
+      "Germany": 3990,
+      "United Kingdom": 4315,
+      "Italy": 3951,
+      "India": 873,
+      "Brazil": 1546
+    },
+    {
+      "date": "4/11/20",
+      "US": 30026,
+      "France": 3114,
+      "Germany": 2737,
+      "United Kingdom": 3577,
+      "Italy": 4694,
+      "India": 848,
+      "Brazil": 1089
+    },
+    {
+      "date": "4/12/20",
+      "US": 28553,
+      "France": 26843,
+      "Germany": 2946,
+      "United Kingdom": 3495,
+      "Italy": 4092,
+      "India": 759,
+      "Brazil": 1465
+    },
+    {
+      "date": "4/13/20",
+      "US": 25291,
+      "France": 3665,
+      "Germany": 2218,
+      "United Kingdom": 4183,
+      "Italy": 3153,
+      "India": 1248,
+      "Brazil": 1238
+    },
+    {
+      "date": "4/14/20",
+      "US": 27065,
+      "France": 4959,
+      "Germany": 1287,
+      "United Kingdom": 4325,
+      "Italy": 2972,
+      "India": 1034,
+      "Brazil": 1832
+    },
+    {
+      "date": "4/15/20",
+      "US": 29096,
+      "France": 3216,
+      "Germany": 3394,
+      "United Kingdom": 5065,
+      "Italy": 2667,
+      "India": 835,
+      "Brazil": 3058
+    },
+    {
+      "date": "4/16/20",
+      "US": 31298,
+      "France": 12471,
+      "Germany": 2945,
+      "United Kingdom": 5298,
+      "Italy": 3786,
+      "India": 1108,
+      "Brazil": 2105
+    },
+    {
+      "date": "4/17/20",
+      "US": 32724,
+      "France": 1979,
+      "Germany": 3699,
+      "United Kingdom": 4965,
+      "Italy": 3493,
+      "India": 922,
+      "Brazil": 3257
+    },
+    {
+      "date": "4/18/20",
+      "US": 28341,
+      "France": -17,
+      "Germany": 1945,
+      "United Kingdom": 4716,
+      "Italy": 3491,
+      "India": 1370,
+      "Brazil": 2976
+    },
+    {
+      "date": "4/19/20",
+      "US": 26038,
+      "France": 4902,
+      "Germany": 1842,
+      "United Kingdom": 3852,
+      "Italy": 3047,
+      "India": 1893,
+      "Brazil": 1996
+    },
+    {
+      "date": "4/20/20",
+      "US": 27341,
+      "France": 2380,
+      "Germany": 1881,
+      "United Kingdom": 4858,
+      "Italy": 2256,
+      "India": 924,
+      "Brazil": 2089
+    },
+    {
+      "date": "4/21/20",
+      "US": 25602,
+      "France": 2733,
+      "Germany": 1226,
+      "United Kingdom": 4760,
+      "Italy": 2729,
+      "India": 1541,
+      "Brazil": 2336
+    },
+    {
+      "date": "4/22/20",
+      "US": 28104,
+      "France": -2206,
+      "Germany": 2357,
+      "United Kingdom": 5490,
+      "Italy": 3370,
+      "India": 1290,
+      "Brazil": 2678
+    },
+    {
+      "date": "4/23/20",
+      "US": 34195,
+      "France": 2311,
+      "Germany": 2481,
+      "United Kingdom": 5143,
+      "Italy": 2646,
+      "India": 1707,
+      "Brazil": 4279
+    },
+    {
+      "date": "4/24/20",
+      "US": 36291,
+      "France": 1610,
+      "Germany": 1870,
+      "United Kingdom": 4973,
+      "Italy": 3021,
+      "India": 1453,
+      "Brazil": 4007
+    },
+    {
+      "date": "4/25/20",
+      "US": 32921,
+      "France": 1656,
+      "Germany": 1514,
+      "United Kingdom": 3748,
+      "Italy": 2357,
+      "India": 1753,
+      "Brazil": 5281
+    },
+    {
+      "date": "4/26/20",
+      "US": 27689,
+      "France": 555,
+      "Germany": 1257,
+      "United Kingdom": 3468,
+      "Italy": 2324,
+      "India": 1607,
+      "Brazil": 3776
+    },
+    {
+      "date": "4/27/20",
+      "US": 22465,
+      "France": 3742,
+      "Germany": 988,
+      "United Kingdom": 4702,
+      "Italy": 1739,
+      "India": 1561,
+      "Brazil": 4346
+    },
+    {
+      "date": "4/28/20",
+      "US": 24535,
+      "France": 3016,
+      "Germany": 1154,
+      "United Kingdom": 4721,
+      "Italy": 2091,
+      "India": 1873,
+      "Brazil": 5789
+    },
+    {
+      "date": "4/29/20",
+      "US": 27520,
+      "France": -2512,
+      "Germany": 1627,
+      "United Kingdom": 5435,
+      "Italy": 2086,
+      "India": 1738,
+      "Brazil": 6450
+    },
+    {
+      "date": "4/30/20",
+      "US": 29629,
+      "France": 671,
+      "Germany": 1470,
+      "United Kingdom": 4956,
+      "Italy": 1872,
+      "India": 1801,
+      "Brazil": 7502
+    },
+    {
+      "date": "5/1/20",
+      "US": 34162,
+      "France": 0,
+      "Germany": 1068,
+      "United Kingdom": 4727,
+      "Italy": 1965,
+      "India": 2394,
+      "Brazil": 5015
+    },
+    {
+      "date": "5/2/20",
+      "US": 29195,
+      "France": 1212,
+      "Germany": 890,
+      "United Kingdom": 3221,
+      "Italy": 1900,
+      "India": 2442,
+      "Brazil": 4898
+    },
+    {
+      "date": "5/3/20",
+      "US": 25587,
+      "France": 296,
+      "Germany": 697,
+      "United Kingdom": 2974,
+      "Italy": 1389,
+      "India": 2806,
+      "Brazil": 4726
+    },
+    {
+      "date": "5/4/20",
+      "US": 22475,
+      "France": 614,
+      "Germany": 488,
+      "United Kingdom": 3378,
+      "Italy": 1221,
+      "India": 3932,
+      "Brazil": 6794
+    },
+    {
+      "date": "5/5/20",
+      "US": 24185,
+      "France": 1049,
+      "Germany": 855,
+      "United Kingdom": 3684,
+      "Italy": 1075,
+      "India": 2963,
+      "Brazil": 6835
+    },
+    {
+      "date": "5/6/20",
+      "US": 25256,
+      "France": 3530,
+      "Germany": 1155,
+      "United Kingdom": 3831,
+      "Italy": 1444,
+      "India": 3587,
+      "Brazil": 11156
+    },
+    {
+      "date": "5/7/20",
+      "US": 27882,
+      "France": 575,
+      "Germany": 1268,
+      "United Kingdom": 3767,
+      "Italy": 1401,
+      "India": 3364,
+      "Brazil": 9162
+    },
+    {
+      "date": "5/8/20",
+      "US": 27178,
+      "France": 1278,
+      "Germany": 1158,
+      "United Kingdom": 3049,
+      "Italy": 1327,
+      "India": 3344,
+      "Brazil": 11121
+    },
+    {
+      "date": "5/9/20",
+      "US": 25733,
+      "France": 440,
+      "Germany": 736,
+      "United Kingdom": 2150,
+      "Italy": 1083,
+      "India": 3113,
+      "Brazil": 9167
+    },
+    {
+      "date": "5/10/20",
+      "US": 19764,
+      "France": 269,
+      "Germany": 555,
+      "United Kingdom": 2321,
+      "Italy": 802,
+      "India": 4353,
+      "Brazil": 6638
+    },
+    {
+      "date": "5/11/20",
+      "US": 18878,
+      "France": 452,
+      "Germany": 697,
+      "United Kingdom": 3583,
+      "Italy": 744,
+      "India": 3607,
+      "Brazil": 6895
+    },
+    {
+      "date": "5/12/20",
+      "US": 22190,
+      "France": 728,
+      "Germany": 595,
+      "United Kingdom": 3389,
+      "Italy": 1402,
+      "India": 3524,
+      "Brazil": 8620
+    },
+    {
+      "date": "5/13/20",
+      "US": 20958,
+      "France": -226,
+      "Germany": 927,
+      "United Kingdom": 3298,
+      "Italy": 888,
+      "India": 3763,
+      "Brazil": 11923
+    },
+    {
+      "date": "5/14/20",
+      "US": 27617,
+      "France": 731,
+      "Germany": 380,
+      "United Kingdom": 2609,
+      "Italy": 992,
+      "India": 3942,
+      "Brazil": 13028
+    },
+    {
+      "date": "5/15/20",
+      "US": 25300,
+      "France": 607,
+      "Germany": 755,
+      "United Kingdom": 2517,
+      "Italy": 789,
+      "India": 3787,
+      "Brazil": 17126
+    },
+    {
+      "date": "5/16/20",
+      "US": 25101,
+      "France": -112,
+      "Germany": 519,
+      "United Kingdom": 2065,
+      "Italy": 875,
+      "India": 4864,
+      "Brazil": 13220
+    },
+    {
+      "date": "5/17/20",
+      "US": 19004,
+      "France": 33,
+      "Germany": 617,
+      "United Kingdom": 1826,
+      "Italy": 675,
+      "India": 5050,
+      "Brazil": 7569
+    },
+    {
+      "date": "5/18/20",
+      "US": 21769,
+      "France": 314,
+      "Germany": 182,
+      "United Kingdom": 2574,
+      "Italy": 451,
+      "India": 4630,
+      "Brazil": 14288
+    },
+    {
+      "date": "5/19/20",
+      "US": 20449,
+      "France": 874,
+      "Germany": 1227,
+      "United Kingdom": 3041,
+      "Italy": 813,
+      "India": 6147,
+      "Brazil": 16517
+    },
+    {
+      "date": "5/20/20",
+      "US": 23807,
+      "France": 641,
+      "Germany": 695,
+      "United Kingdom": 2706,
+      "Italy": 665,
+      "India": 5553,
+      "Brazil": 19694
+    },
+    {
+      "date": "5/21/20",
+      "US": 25355,
+      "France": 237,
+      "Germany": 548,
+      "United Kingdom": 2542,
+      "Italy": 642,
+      "India": 6198,
+      "Brazil": 18508
+    },
+    {
+      "date": "5/22/20",
+      "US": 24141,
+      "France": 339,
+      "Germany": 689,
+      "United Kingdom": 2030,
+      "Italy": 652,
+      "India": 6568,
+      "Brazil": 20803
+    },
+    {
+      "date": "5/23/20",
+      "US": 21823,
+      "France": 319,
+      "Germany": 276,
+      "United Kingdom": 1507,
+      "Italy": 669,
+      "India": 6629,
+      "Brazil": 16508
+    },
+    {
+      "date": "5/24/20",
+      "US": 20813,
+      "France": -105,
+      "Germany": 342,
+      "United Kingdom": 1348,
+      "Italy": 531,
+      "India": 7113,
+      "Brazil": 15813
+    },
+    {
+      "date": "5/25/20",
+      "US": 18991,
+      "France": 307,
+      "Germany": 272,
+      "United Kingdom": 1607,
+      "Italy": 300,
+      "India": 6414,
+      "Brazil": 11687
+    },
+    {
+      "date": "5/26/20",
+      "US": 18883,
+      "France": -279,
+      "Germany": 600,
+      "United Kingdom": 1650,
+      "Italy": 397,
+      "India": 5843,
+      "Brazil": 16324
+    },
+    {
+      "date": "5/27/20",
+      "US": 18282,
+      "France": 157,
+      "Germany": 324,
+      "United Kingdom": 1802,
+      "Italy": 584,
+      "India": 7293,
+      "Brazil": 20599
+    },
+    {
+      "date": "5/28/20",
+      "US": 22815,
+      "France": 3265,
+      "Germany": 672,
+      "United Kingdom": 1734,
+      "Italy": 593,
+      "India": 7300,
+      "Brazil": 26417
+    },
+    {
+      "date": "5/29/20",
+      "US": 24504,
+      "France": 507,
+      "Germany": 726,
+      "United Kingdom": 1504,
+      "Italy": 516,
+      "India": 8105,
+      "Brazil": 26928
+    },
+    {
+      "date": "5/30/20",
+      "US": 24450,
+      "France": 1800,
+      "Germany": 267,
+      "United Kingdom": 1099,
+      "Italy": 416,
+      "India": 8336,
+      "Brazil": 33274
+    },
+    {
+      "date": "5/31/20",
+      "US": 19910,
+      "France": 235,
+      "Germany": 221,
+      "United Kingdom": 1069,
+      "Italy": 333,
+      "India": 8782,
+      "Brazil": 16409
+    },
+    {
+      "date": "6/1/20",
+      "US": 17355,
+      "France": 101,
+      "Germany": 184,
+      "United Kingdom": 1434,
+      "Italy": 200,
+      "India": 7761,
+      "Brazil": 11598
+    },
+    {
+      "date": "6/2/20",
+      "US": 20895,
+      "France": -840,
+      "Germany": 285,
+      "United Kingdom": 1467,
+      "Italy": 318,
+      "India": 8821,
+      "Brazil": 28936
+    },
+    {
+      "date": "6/3/20",
+      "US": 19958,
+      "France": 328,
+      "Germany": 242,
+      "United Kingdom": 1342,
+      "Italy": 321,
+      "India": 9633,
+      "Brazil": 28633
+    },
+    {
+      "date": "6/4/20",
+      "US": 21351,
+      "France": 678,
+      "Germany": 351,
+      "United Kingdom": 1234,
+      "Italy": 177,
+      "India": 9889,
+      "Brazil": 30925
+    },
+    {
+      "date": "6/5/20",
+      "US": 25224,
+      "France": 552,
+      "Germany": 452,
+      "United Kingdom": 1105,
+      "Italy": 518,
+      "India": 9471,
+      "Brazil": 30830
+    },
+    {
+      "date": "6/6/20",
+      "US": 22732,
+      "France": 529,
+      "Germany": 526,
+      "United Kingdom": 791,
+      "Italy": 270,
+      "India": 10438,
+      "Brazil": 27075
+    },
+    {
+      "date": "6/7/20",
+      "US": 17731,
+      "France": 293,
+      "Germany": 300,
+      "United Kingdom": 717,
+      "Italy": 197,
+      "India": 10864,
+      "Brazil": 18912
+    },
+    {
+      "date": "6/8/20",
+      "US": 17415,
+      "France": 98,
+      "Germany": 359,
+      "United Kingdom": 1086,
+      "Italy": 280,
+      "India": 8442,
+      "Brazil": 15654
+    },
+    {
+      "date": "6/9/20",
+      "US": 18127,
+      "France": 335,
+      "Germany": 397,
+      "United Kingdom": 1153,
+      "Italy": 283,
+      "India": 10218,
+      "Brazil": 32091
+    },
+    {
+      "date": "6/10/20",
+      "US": 20794,
+      "France": 397,
+      "Germany": 16,
+      "United Kingdom": 1182,
+      "Italy": 202,
+      "India": 10459,
+      "Brazil": 32913
+    },
+    {
+      "date": "6/11/20",
+      "US": 22950,
+      "France": 358,
+      "Germany": 169,
+      "United Kingdom": 1001,
+      "Italy": 379,
+      "India": 10930,
+      "Brazil": 30412
+    },
+    {
+      "date": "6/12/20",
+      "US": 25330,
+      "France": 564,
+      "Germany": 535,
+      "United Kingdom": 1053,
+      "Italy": 163,
+      "India": 11458,
+      "Brazil": 25982
+    },
+    {
+      "date": "6/13/20",
+      "US": 25556,
+      "France": 393,
+      "Germany": 41,
+      "United Kingdom": 887,
+      "Italy": 346,
+      "India": 11929,
+      "Brazil": 21704
+    },
+    {
+      "date": "6/14/20",
+      "US": 19824,
+      "France": 291,
+      "Germany": 251,
+      "United Kingdom": 807,
+      "Italy": 338,
+      "India": 11502,
+      "Brazil": 17110
+    },
+    {
+      "date": "6/15/20",
+      "US": 19660,
+      "France": 68,
+      "Germany": 164,
+      "United Kingdom": 1026,
+      "Italy": 301,
+      "India": 10667,
+      "Brazil": 20647
+    },
+    {
+      "date": "6/16/20",
+      "US": 23705,
+      "France": 227,
+      "Germany": 570,
+      "United Kingdom": 1077,
+      "Italy": 210,
+      "India": 10974,
+      "Brazil": 34918
+    },
+    {
+      "date": "6/17/20",
+      "US": 25559,
+      "France": 311,
+      "Germany": 352,
+      "United Kingdom": 997,
+      "Italy": 328,
+      "India": 12881,
+      "Brazil": 32188
+    },
+    {
+      "date": "6/18/20",
+      "US": 27809,
+      "France": 201,
+      "Germany": 1213,
+      "United Kingdom": 1020,
+      "Italy": 331,
+      "India": 13586,
+      "Brazil": 22765
+    },
+    {
+      "date": "6/19/20",
+      "US": 31480,
+      "France": 569,
+      "Germany": 482,
+      "United Kingdom": 980,
+      "Italy": -148,
+      "India": 14516,
+      "Brazil": 54771
+    },
+    {
+      "date": "6/20/20",
+      "US": 32749,
+      "France": 436,
+      "Germany": 371,
+      "United Kingdom": 666,
+      "Italy": 264,
+      "India": 15403,
+      "Brazil": 34666
+    },
+    {
+      "date": "6/21/20",
+      "US": 26439,
+      "France": 5,
+      "Germany": 602,
+      "United Kingdom": 622,
+      "Italy": 224,
+      "India": 14831,
+      "Brazil": 15762
+    },
+    {
+      "date": "6/22/20",
+      "US": 30536,
+      "France": 325,
+      "Germany": 496,
+      "United Kingdom": 892,
+      "Italy": 221,
+      "India": 14933,
+      "Brazil": 23129
+    },
+    {
+      "date": "6/23/20",
+      "US": 35188,
+      "France": 382,
+      "Germany": 712,
+      "United Kingdom": 882,
+      "Italy": 113,
+      "India": 15968,
+      "Brazil": 39436
+    },
+    {
+      "date": "6/24/20",
+      "US": 34935,
+      "France": -187,
+      "Germany": 391,
+      "United Kingdom": 774,
+      "Italy": 577,
+      "India": 16922,
+      "Brazil": 42725
+    },
+    {
+      "date": "6/25/20",
+      "US": 39873,
+      "France": -255,
+      "Germany": 500,
+      "United Kingdom": 697,
+      "Italy": 296,
+      "India": 17296,
+      "Brazil": 39483
+    },
+    {
+      "date": "6/26/20",
+      "US": 45255,
+      "France": 1336,
+      "Germany": 665,
+      "United Kingdom": 638,
+      "Italy": 255,
+      "India": 18552,
+      "Brazil": 46860
+    },
+    {
+      "date": "6/27/20",
+      "US": 42705,
+      "France": -194,
+      "Germany": 422,
+      "United Kingdom": 633,
+      "Italy": 175,
+      "India": 19906,
+      "Brazil": 38693
+    },
+    {
+      "date": "6/28/20",
+      "US": 39605,
+      "France": -723,
+      "Germany": 235,
+      "United Kingdom": 395,
+      "Italy": 174,
+      "India": 19459,
+      "Brazil": 30476
+    },
+    {
+      "date": "6/29/20",
+      "US": 40804,
+      "France": 1680,
+      "Germany": 349,
+      "United Kingdom": 604,
+      "Italy": 126,
+      "India": 18522,
+      "Brazil": 24052
+    },
+    {
+      "date": "6/30/20",
+      "US": 45746,
+      "France": 264,
+      "Germany": 376,
+      "United Kingdom": 403,
+      "Italy": 142,
+      "India": 18641,
+      "Brazil": 33846
+    },
+    {
+      "date": "7/1/20",
+      "US": 51174,
+      "France": 612,
+      "Germany": 475,
+      "United Kingdom": 60,
+      "Italy": 182,
+      "India": 19160,
+      "Brazil": 46712
+    },
+    {
+      "date": "7/2/20",
+      "US": 54461,
+      "France": 473,
+      "Germany": 477,
+      "United Kingdom": 4,
+      "Italy": 201,
+      "India": 20903,
+      "Brazil": 48105
+    },
+    {
+      "date": "7/3/20",
+      "US": 53312,
+      "France": 446,
+      "Germany": 410,
+      "United Kingdom": 502,
+      "Italy": 223,
+      "India": 22771,
+      "Brazil": 42223
+    },
+    {
+      "date": "7/4/20",
+      "US": 45880,
+      "France": -358,
+      "Germany": 418,
+      "United Kingdom": 624,
+      "Italy": 235,
+      "India": 24850,
+      "Brazil": 37923
+    },
+    {
+      "date": "7/5/20",
+      "US": 49883,
+      "France": -11,
+      "Germany": 325,
+      "United Kingdom": 516,
+      "Italy": 192,
+      "India": 24248,
+      "Brazil": 26051
+    },
+    {
+      "date": "7/6/20",
+      "US": 44953,
+      "France": 1213,
+      "Germany": 541,
+      "United Kingdom": 352,
+      "Italy": 208,
+      "India": 22251,
+      "Brazil": 20229
+    },
+    {
+      "date": "7/7/20",
+      "US": 60021,
+      "France": 341,
+      "Germany": 279,
+      "United Kingdom": 581,
+      "Italy": 137,
+      "India": 22753,
+      "Brazil": 45305
+    },
+    {
+      "date": "7/8/20",
+      "US": 58601,
+      "France": -293,
+      "Germany": 356,
+      "United Kingdom": 630,
+      "Italy": 193,
+      "India": 24879,
+      "Brazil": 44571
+    },
+    {
+      "date": "7/9/20",
+      "US": 63247,
+      "France": 1168,
+      "Germany": 302,
+      "United Kingdom": 642,
+      "Italy": 214,
+      "India": 26506,
+      "Brazil": 42619
+    },
+    {
+      "date": "7/10/20",
+      "US": 67791,
+      "France": 486,
+      "Germany": 331,
+      "United Kingdom": 512,
+      "Italy": 276,
+      "India": 27114,
+      "Brazil": 45048
+    },
+    {
+      "date": "7/11/20",
+      "US": 60188,
+      "France": -251,
+      "Germany": 377,
+      "United Kingdom": 820,
+      "Italy": 188,
+      "India": 28606,
+      "Brazil": 39023
+    },
+    {
+      "date": "7/12/20",
+      "US": 59017,
+      "France": -16,
+      "Germany": 210,
+      "United Kingdom": 650,
+      "Italy": 234,
+      "India": 28732,
+      "Brazil": 24831
+    },
+    {
+      "date": "7/13/20",
+      "US": 59215,
+      "France": 1388,
+      "Germany": 261,
+      "United Kingdom": 530,
+      "Italy": 169,
+      "India": 28498,
+      "Brazil": 20286
+    },
+    {
+      "date": "7/14/20",
+      "US": 67417,
+      "France": -62,
+      "Germany": 276,
+      "United Kingdom": 1240,
+      "Italy": 114,
+      "India": 29429,
+      "Brazil": 41857
+    },
+    {
+      "date": "7/15/20",
+      "US": 67328,
+      "France": 829,
+      "Germany": 434,
+      "United Kingdom": 538,
+      "Italy": 162,
+      "India": 32676,
+      "Brazil": 39924
+    },
+    {
+      "date": "7/16/20",
+      "US": 77255,
+      "France": 401,
+      "Germany": 560,
+      "United Kingdom": 641,
+      "Italy": 230,
+      "India": 34975,
+      "Brazil": 45403
+    },
+    {
+      "date": "7/17/20",
+      "US": 71558,
+      "France": 709,
+      "Germany": 595,
+      "United Kingdom": 687,
+      "Italy": 231,
+      "India": 35252,
+      "Brazil": 34177
+    },
+    {
+      "date": "7/18/20",
+      "US": 63698,
+      "France": -163,
+      "Germany": 381,
+      "United Kingdom": 827,
+      "Italy": 249,
+      "India": 38697,
+      "Brazil": 28532
+    },
+    {
+      "date": "7/19/20",
+      "US": 61847,
+      "France": -4,
+      "Germany": 309,
+      "United Kingdom": 726,
+      "Italy": 218,
+      "India": 40425,
+      "Brazil": 23529
+    },
+    {
+      "date": "7/20/20",
+      "US": 61417,
+      "France": 1961,
+      "Germany": 590,
+      "United Kingdom": 580,
+      "Italy": 190,
+      "India": 37132,
+      "Brazil": 20257
+    },
+    {
+      "date": "7/21/20",
+      "US": 64534,
+      "France": 454,
+      "Germany": 392,
+      "United Kingdom": 445,
+      "Italy": 128,
+      "India": 37740,
+      "Brazil": 41008
+    },
+    {
+      "date": "7/22/20",
+      "US": 70910,
+      "France": 945,
+      "Germany": 559,
+      "United Kingdom": 560,
+      "Italy": 280,
+      "India": 45720,
+      "Brazil": 67860
+    },
+    {
+      "date": "7/23/20",
+      "US": 68695,
+      "France": 835,
+      "Germany": 605,
+      "United Kingdom": 769,
+      "Italy": 306,
+      "India": 49310,
+      "Brazil": 59961
+    },
+    {
+      "date": "7/24/20",
+      "US": 73715,
+      "France": 942,
+      "Germany": 742,
+      "United Kingdom": 768,
+      "Italy": 252,
+      "India": 48916,
+      "Brazil": 55891
+    },
+    {
+      "date": "7/25/20",
+      "US": 66439,
+      "France": -84,
+      "Germany": 655,
+      "United Kingdom": 767,
+      "Italy": 274,
+      "India": 48611,
+      "Brazil": 51147
+    },
+    {
+      "date": "7/26/20",
+      "US": 54953,
+      "France": 0,
+      "Germany": 389,
+      "United Kingdom": 745,
+      "Italy": 254,
+      "India": 49981,
+      "Brazil": 24578
+    }
+  ]
+}
