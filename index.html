@@ -183,7 +183,7 @@
                                 .attr("id", "cs498Annotation-ldend-" + countryName)
                                 .style("opacity", 0);
                     currLine = d3.line()
-                        .x(function(d) {
+                        .x(function(d, i) {
                             x_coordinate = x(d.date)
                             y_coordinate = y(d[countryName])
 
@@ -192,19 +192,79 @@
                                 var currldStartCont = d3.select("#cs498Annotation-ldstart-"  + countryName)
                                         .style("opacity", 1)
                                         .attr("transform", "translate(" + (x(d.date)) + "," + (0) + ")")
-                                        .append("circle")
-                                        .attr("r", 4.5)
-                                        .attr("cy", y_coordinate)
+                                currldStartCont.append("circle")
+                                    .attr("r", 4.5)
+                                    .attr("cy", y_coordinate)
+                                    .style("fill", colorToUse)
+
+                                // todo draw a vertical line
+                                var startVertLine = currldStartCont.append("line")
+                                    .attr("transform", "translate(" + (0) + "," + height + ")")
+                                    .attr("y1", -height + 0)
+                                    .attr("y2",0)
+                                    .style("stroke", colorToUse)
+                                    .attr("stroke-width", 2)
+                                    .style("shape-rendering", "crispEdges")
+                                    .style("opacity", 0.5)
+
+                                var startHorLine = currldStartCont.append("line")
+                                    .attr("transform", "translate(" + (-x(d.date)) + "," + (0) + ")")
+                                    .attr("x1", x.range()[0])
+                                    .attr("y1", y_coordinate)
+                                    .attr("x2",x.range()[1])
+                                    .attr("y2",y_coordinate)
+                                    .style("stroke", colorToUse)
+                                    .attr("stroke-width", 2)
+                                    .style("shape-rendering", "crispEdges")
+                                    .style("opacity", 0.5)
+
+                                currldStartCont.append("text")
+                                        .attr("transform", "translate(" + (0) + "," + height + ")")
+                                        .attr("transform", "rotate(" + (-45)+ ")")
+                                        .text("Start " + countryName + " " + formatDate(d.date) + " #" + d[countryName])
                                         .style("fill", colorToUse)
+                                        .attr("text-anchor", "end")
+                                        .attr("font-size", 12)
+                                        
                             }
                             if (checkIfLockDownBoundary(countryName, "lockdown_end_date",d.date)) {
                                 var currldEndCont = d3.select("#cs498Annotation-ldend-"  + countryName)
                                         .style("opacity", 1)
                                         .attr("transform", "translate(" + (x(d.date)) + "," + (0) + ")")
-                                        .append("circle")
+
+                                currldEndCont.append("circle")
                                         .attr("r",5)
                                         .attr("cy", y_coordinate)
                                         .style("fill", colorToUse)
+
+                                // todo draw a vertical line
+                                var endVertLine = currldEndCont.append("line")
+                                    .attr("transform", "translate(" + (0) + "," + height + ")")
+                                    .attr("y1", -height + 0)
+                                    .attr("y2",0)
+                                    .style("stroke", colorToUse)
+                                    .attr("stroke-width", 2)
+                                    .style("shape-rendering", "crispEdges")
+                                    .style("opacity", 0.5)
+
+                                var endHorLine = currldEndCont.append("line")
+                                    .attr("transform", "translate(" + (-x(d.date)) + "," + (0) + ")")
+                                    .attr("x1", x.range()[0])
+                                    .attr("y1", y_coordinate)
+                                    .attr("x2",x.range()[1])
+                                    .attr("y2",y_coordinate)
+                                    .style("stroke", colorToUse)
+                                    .attr("stroke-width", 2)
+                                    .style("shape-rendering", "crispEdges")
+                                    .style("opacity", 0.5)
+
+                                currldEndCont.append("text")
+                                        .attr("transform", "translate(" + (0) + "," + height + ")")
+                                        .attr("transform", "rotate(" + (-45)+ ")")
+                                        .text("End " + countryName + " " + formatDate(d.date) + " #" + d[countryName])
+                                        .style("fill", colorToUse)
+                                        .attr("text-anchor", "end")
+                                        .attr("font-size", 12)
                             }
                             return x_coordinate;
                         })
