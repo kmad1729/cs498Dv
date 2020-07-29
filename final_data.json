@@ -1868,5 +1868,49 @@
       "India": 49981,
       "Brazil": 24578
     }
-  ]
+  ],
+  "country_list": {
+    "US": {
+      "population": 329064917,
+      "lockdown_start_date": null,
+      "lockdown_end_date": null,
+      "case_per_capita_on_data": {}
+    },
+    "France": {
+      "population": 65129728,
+      "lockdown_start_date": "03/17/20",
+      "lockdown_end_date": "05/11/20",
+      "case_per_capita_on_data": {}
+    },
+    "Germany": {
+      "population": 83517045,
+      "lockdown_start_date": "03/23/20",
+      "lockdown_end_date": "05/10/20",
+      "case_per_capita_on_data": {}
+    },
+    "United_Kingdom": {
+      "population": 67530172,
+      "lockdown_start_date": "03/23/20",
+      "lockdown_end_date": null,
+      "case_per_capita_on_data": {}
+    },
+    "Italy": {
+      "lockdown_end_date": "05/18/20",
+      "population": 60550075,
+      "lockdown_start_date": "03/09/20",
+      "case_per_capita_on_data": {}
+    },
+    "India": {
+      "population": 1366417754,
+      "lockdown_start_date": "03/25/20",
+      "lockdown_end_date": "06/30/20",
+      "case_per_capita_on_data": {}
+    },
+    "Brazil": {
+      "population": 211049527,
+      "lockdown_start_date": null,
+      "lockdown_end_date": null,
+      "case_per_capita_on_data": {}
+    }
+  }
 }

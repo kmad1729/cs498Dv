@@ -27,37 +27,44 @@ country_list = {
 
         "US" : {
             "population": int("329,064,917".replace(",", '')),
-            "lockdown_date": None,
+            "lockdown_start_date": None,
+            "lockdown_end_date": None, 
             "case_per_capita_on_data": {},
         },
         "France" : {
             "population": int("65,129,728".replace(",", '')),
-            "lockdown_date": datetime(year=2020, month=3, day=17).strftime(filewide_dateFormat),
+            "lockdown_start_date": datetime(year=2020, month=3, day=17).strftime(filewide_dateFormat),
+            "lockdown_end_date": datetime(year=2020, month=5, day=11).strftime(filewide_dateFormat),
             "case_per_capita_on_data" :  {},
         },
         "Germany" : {
             "population": int("83,517,045	".replace(",", '')),
-            "lockdown_date": datetime(year=2020, month=3, day=23).strftime(filewide_dateFormat),
+            "lockdown_start_date": datetime(year=2020, month=3, day=23).strftime(filewide_dateFormat),
+            "lockdown_end_date": datetime(year=2020, month=5, day=10).strftime(filewide_dateFormat),
             "case_per_capita_on_data" : {},
         },
         "United_Kingdom" : {
             "population": int("67,530,172".replace(",", '')),
-            "lockdown_date": datetime(year=2020, month=3, day=23).strftime(filewide_dateFormat), 
+            "lockdown_start_date": datetime(year=2020, month=3, day=23).strftime(filewide_dateFormat), 
+            "lockdown_end_date": None, 
             "case_per_capita_on_data" : {},
         },
         "Italy" : {
+            "lockdown_end_date": datetime(year=2020, month=5, day=18).strftime(filewide_dateFormat),
             "population": int("60,550,075".replace(",", '')),
-            "lockdown_date": datetime(year=2020, month=3, day=9).strftime(filewide_dateFormat),
+            "lockdown_start_date": datetime(year=2020, month=3, day=9).strftime(filewide_dateFormat),
             "case_per_capita_on_data" : {},
         },
         "India" : {
             "population": int("1,366,417,754".replace(",", '')),
-            "lockdown_date": datetime(year=2020, month=3, day=25).strftime(filewide_dateFormat),
+            "lockdown_start_date": datetime(year=2020, month=3, day=25).strftime(filewide_dateFormat),
+            "lockdown_end_date": datetime(year=2020, month=6, day=30).strftime(filewide_dateFormat),
             "case_per_capita_on_data" : {},
         },
         "Brazil" : {
             "population": int("211,049,527".replace(",", '')),
-            "lockdown_date": None,
+            "lockdown_start_date": None,
+            "lockdown_end_date": None, 
             "case_per_capita_on_data" : {},
         },
 }
@@ -96,7 +103,7 @@ for country_name in country_list:
             abs_case_count = round(curr_count_val/country_pop * 10e5)
 
 
-            curr_val["case_per_capita_on_data"][col] = { 'delta' : data_to_add, 'abs_case_count' :  abs_case_count}
+            # curr_val["case_per_capita_on_data"][col] = { 'delta' : data_to_add, 'abs_case_count' :  abs_case_count}
             print(f'{formatted_date}: country:{country_name}-- {col}-- case count: {abs_case_count} -- delta: {data_to_add}')
             if col not in date_to_country_mapping:
                 date_to_country_mapping[col] = {}
@@ -112,6 +119,7 @@ for date, country_data in date_to_country_mapping.items():
     date_wise_list.append(curr_obj)
 
 final_data_to_write["date_to_country_mapping"] = date_wise_list
+final_data_to_write["country_list"] = country_list
 
 
 ofname = "final_data.json"

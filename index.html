@@ -28,7 +28,19 @@
                 2px -2px 0 #fff,
                 -2px 2px 0 #fff,
                 2px 2px 0 #fff;
-            }            
+            } 
+            div.cs498Annotation {	
+                position: absolute;			
+                text-align: center;			
+                width: 60px;					
+                height: 28px;					
+                padding: 2px;				
+                font: 12px sans-serif;		
+                background: lightsteelblue;	
+                border: 0px;		
+                border-radius: 8px;			
+                pointer-events: none;			
+            }
         </style>
     </head>
     <body>
@@ -127,29 +139,80 @@
                     .attr("dy", ".71em")
                     .style("text-anchor", "end")
                     .text("Case Count");
-
+                
                 massagedLineData = inp_data["date_to_country_mapping"]
                 massagedLineData.forEach(function(singleDayData) {
                     singleDayData.date = parseDate(singleDayData.date)
                 });
 
+                function checkIfLockDownBoundary(countryName, lockDownDateStr, currDate) {
+                    lockDownDate = inp_data["country_list"][countryName][lockDownDateStr]
+                    if (lockDownDate == null) return false;
+                    lockDownDate = parseDate(lockDownDate);
+                    if(lockDownDate.getTime() == currDate.getTime()) {
+                        return true
+                    }
+                    return false;
+                }
+
+                function isDateInLockDown(countryName, dateToCheck) {
+                    lockDownStartDate = inp_data["country_list"][countryName]["lockdown_start_date"]
+                    lockDownEndDate = inp_data["country_list"][countryName]["lockdown_end_date"]
+                    if (lockDownStartDate == null || lockDownEndDate == null) {
+                        return false;
+                    }
+                    lockDownStartDate = parseDate(lockDownStartDate);
+                    lockDownEndDate = parseDate(lockDownEndDate);
+                    result = (dateToCheck.getTime() >= lockDownStartDate.getTime() && 
+                        dateToCheck.getTime() <= lockDownEndDate.getTime())
+                    return result
+                }
                 // creating lines for all countries
                 allCountryData.forEach(function(countryObj) {
 
                     countryName = countryObj.countryName
                     colorToUse = countryObj.colorToUse
 
-                    var focusText = svg.append('g').append("text");
+                    var ldstartContainer = svg.append("g")	
+                                .attr("class", "cs498Annotation")				
+                                .attr("id", "cs498Annotation-ldstart-" + countryName)
+                                .style("opacity", 0);
 
+                    var ldendContainer = svg.append("g")	
+                                .attr("class", "cs498Annotation")				
+                                .attr("id", "cs498Annotation-ldend-" + countryName)
+                                .style("opacity", 0);
                     currLine = d3.line()
                         .x(function(d) {
-                            return x(d.date);
+                            x_coordinate = x(d.date)
+                            y_coordinate = y(d[countryName])
+
+                            if (checkIfLockDownBoundary(countryName, "lockdown_start_date",d.date)) {
+
+                                var currldStartCont = d3.select("#cs498Annotation-ldstart-"  + countryName)
+                                        .style("opacity", 1)
+                                        .attr("transform", "translate(" + (x(d.date)) + "," + (0) + ")")
+                                        .append("circle")
+                                        .attr("r", 4.5)
+                                        .attr("cy", y_coordinate)
+                                        .style("fill", colorToUse)
+                            }
+                            if (checkIfLockDownBoundary(countryName, "lockdown_end_date",d.date)) {
+                                var currldEndCont = d3.select("#cs498Annotation-ldend-"  + countryName)
+                                        .style("opacity", 1)
+                                        .attr("transform", "translate(" + (x(d.date)) + "," + (0) + ")")
+                                        .append("circle")
+                                        .attr("r",5)
+                                        .attr("cy", y_coordinate)
+                                        .style("fill", colorToUse)
+                            }
+                            return x_coordinate;
                         })
                         .y(function(d) {
                             return y(d[countryName]);
                         })
                         ;
-                    
+
                     svg.append("path")
                         .data([massagedLineData])
                         .attr("class", "line")
@@ -157,6 +220,7 @@
                         .style("stroke", colorToUse)
                         .attr("d", currLine)
                     ;
+
                 });
 
                 // add checkboxes
@@ -313,7 +377,6 @@
                 pathObj.attr("stroke-dasharray", totalLength) 
                 .attr("stroke-dashoffset", totalLength)
                 .style("opacity", function (d, i) {
-                    console.log(checkboxTrueCountries)
                     if(checkboxTrueCountries.includes(countryName)) {
                         return 1
                     } else {
@@ -323,6 +386,7 @@
                 .transition()
                 .duration(800)
                 .attr("stroke-dashoffset", 0)
+
             })
         }
 
@@ -334,12 +398,18 @@
             result = []
             allCountryData.forEach(function (countryObj) {
                 var currPathElem = d3.select("#covidpath-" + countryObj.countryName)
+                var currLdStartElem = d3.select("#cs498Annotation-ldstart-" + countryObj.countryName)
+                var currLdEndElem = d3.select("#cs498Annotation-ldend-" + countryObj.countryName)
                 if (isCountryChecked(countryObj.countryName)) {
                     currPathElem.style("opacity", 1)
+                    currLdStartElem.style("opacity", 1)
+                    currLdEndElem.style("opacity", 1)
                     result.push(countryObj.countryName)
                 } else {
                     // change opacity of unselected country
                     currPathElem.style("opacity", 0.1)
+                    currLdStartElem.style("opacity", 0.1)
+                    currLdEndElem.style("opacity", 0.1)
                 }
             })
             selectedCountries = result
