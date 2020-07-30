@@ -1,0 +1,35 @@
+
+            .line {
+                fill: none;
+                stroke: steelblue;
+                stroke-width: 2px;
+              }
+  
+              button {
+                  margin-top: 6px;
+                  margin-left: 6px;
+                  position: absolute;
+              }
+              .overlay {
+                  fill: none;
+                  pointer-events: all;
+              }
+              .lineHoverText {
+                  text-shadow:
+                  -2px -2px 0 #fff,
+                  2px -2px 0 #fff,
+                  -2px 2px 0 #fff,
+                  2px 2px 0 #fff;
+              } 
+              div.cs498Annotation {	
+                  position: absolute;			
+                  text-align: center;			
+                  width: 60px;					
+                  height: 28px;					
+                  padding: 2px;				
+                  font: 12px sans-serif;		
+                  background: lightsteelblue;	
+                  border: 0px;		
+                  border-radius: 8px;			
+                  pointer-events: none;			
+              }
