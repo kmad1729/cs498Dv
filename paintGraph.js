@@ -340,6 +340,7 @@ d3.json(finalDataUrl, function (error, inp_data) {
         resultDataToToolTip.sort(function(a,b) {
             return b.cases - a.cases
         })
+        resultDataToToolTip = resultDataToToolTip.slice(0, 10)
         focus.selectAll(".lineHoverText").remove()
         var labels = focus.selectAll(".lineHoverText")
             .data(resultDataToToolTip)
