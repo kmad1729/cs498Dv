@@ -14,3 +14,6 @@ https://github.com/CSSEGISandData/COVID-19
 #lockdown dates = https://en.wikipedia.org/wiki/COVID-19_pandemic_lockdowns
 #total pop = https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)
 
+initial writeup
+
+Covid-19 pandemic has affected the whole world 

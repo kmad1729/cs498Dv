@@ -1,9 +1,11 @@
 if (document.URL.includes("localhost:8000")) {
     var finalDataUrl = "http://localhost:8000/cs498Dv/final_data.json";
     var jsUrl = "http://localhost:8000/cs498Dv/final_data.json";
+    var allCountryDataMapUrl = "http://localhost:8000/cs498Dv/all_countryDataColors.json";
 } else {
     var finalDataUrl = "https://raw.githubusercontent.com/kmad1729/cs498Dv/master/final_data.json";
     var jsUrl = "https://raw.githubusercontent.com/kmad1729/cs498Dv/master/final_data.json";
+    var allCountryDataMapUrl = "https://raw.githubusercontent.com/kmad1729/cs498Dv/master/all_countryDataColors.json";
 }   
 var myGlobalVar;
 var linesList = []
@@ -30,11 +32,9 @@ var x = d3.scaleTime()
         .range([0, width]);
 var y = d3.scaleLinear().range([height, 0]);
 var z = d3.scaleOrdinal(d3.schemeCategory10);
+           
 
-// d3.json(finalDataUrl).then(inp_data => chart(inp_data));
-                
-
-
+console.log(allCountryDataMap)
 var allCountryData = getAllCountryData();
 
 function getAllCountryData() {

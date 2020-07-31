@@ -1,0 +1,327 @@
+{
+  "Albania": {
+    "lockdown_start_date": "03/13/20",
+    "lockdown_end_date": "06/01/20",
+    "population": 2880917
+  },
+  "Argentina": {
+    "lockdown_start_date": "03/19/20",
+    "lockdown_end_date": "06/28/20",
+    "population": 44780677
+  },
+  "Armenia": {
+    "lockdown_start_date": "03/24/20",
+    "lockdown_end_date": "05/04/20",
+    "population": 2957731
+  },
+  "Australia": {
+    "lockdown_start_date": "03/23/20",
+    "lockdown_end_date": null,
+    "population": 25203198
+  },
+  "Austria": {
+    "lockdown_start_date": "03/16/20",
+    "lockdown_end_date": "04/13/20",
+    "population": 8955102
+  },
+  "Azerbaijan": {
+    "lockdown_start_date": "03/31/20",
+    "lockdown_end_date": "08/30/20",
+    "population": 10047718
+  },
+  "Bangladesh": {
+    "lockdown_start_date": "03/26/20",
+    "lockdown_end_date": "05/16/20",
+    "population": 163046161
+  },
+  "Barbados": {
+    "lockdown_start_date": "03/28/20",
+    "lockdown_end_date": "05/03/20",
+    "population": 287025
+  },
+  "Belgium": {
+    "lockdown_start_date": "03/18/20",
+    "lockdown_end_date": "05/04/20",
+    "population": 11539328
+  },
+  "Bermuda": {
+    "lockdown_start_date": "04/04/20",
+    "lockdown_end_date": "05/02/20",
+    "population": 62506
+  },
+  "Bolivia": {
+    "lockdown_start_date": "03/22/20",
+    "lockdown_end_date": "07/31/20",
+    "population": 11513100
+  },
+  "Botswana": {
+    "lockdown_start_date": "04/02/20",
+    "lockdown_end_date": "04/30/20",
+    "population": 2303697
+  },
+  "Colombia": {
+    "lockdown_start_date": "03/25/20",
+    "lockdown_end_date": "06/30/20",
+    "population": 50339443
+  },
+  "Costa_Rica": {
+    "lockdown_start_date": "03/23/20",
+    "lockdown_end_date": null,
+    "population": 5047561
+  },
+  "Croatia": {
+    "lockdown_start_date": "03/18/20",
+    "lockdown_end_date": "04/19/20",
+    "population": 4130304
+  },
+  "Czech_Republic": {
+    "lockdown_start_date": "03/16/20",
+    "lockdown_end_date": "04/12/20",
+    "population": 10689209
+  },
+  "Ecuador": {
+    "lockdown_start_date": "03/16/20",
+    "lockdown_end_date": "03/31/20",
+    "population": 17373662
+  },
+  "El_Salvador": {
+    "lockdown_start_date": "03/12/20",
+    "lockdown_end_date": "04/02/20",
+    "population": 6453553
+  },
+  "Eritrea": {
+    "lockdown_start_date": "04/02/20",
+    "lockdown_end_date": "04/23/20",
+    "population": 3497117
+  },
+  "France": {
+    "lockdown_start_date": "03/17/20",
+    "lockdown_end_date": "05/11/20",
+    "population": 65129728
+  },
+  "Georgia": {
+    "lockdown_start_date": "03/31/20",
+    "lockdown_end_date": "04/21/20",
+    "population": 3996765
+  },
+  "Germany": {
+    "lockdown_start_date": "03/23/20",
+    "lockdown_end_date": "04/20/20",
+    "population": 83517045
+  },
+  "Greece": {
+    "lockdown_start_date": "03/23/20",
+    "lockdown_end_date": "05/04/20",
+    "population": 10473455
+  },
+  "Honduras": {
+    "lockdown_start_date": "03/20/20",
+    "lockdown_end_date": "05/17/20",
+    "population": 9746117
+  },
+  "Hungary": {
+    "lockdown_start_date": "03/28/20",
+    "lockdown_end_date": "04/10/20",
+    "population": 9684679
+  },
+  "India": {
+    "lockdown_start_date": "03/25/20",
+    "lockdown_end_date": "06/30/20",
+    "population": 1366417754
+  },
+  "Iran": {
+    "lockdown_start_date": "03/14/20",
+    "lockdown_end_date": "04/20/20",
+    "population": 82913906
+  },
+  "Iraq": {
+    "lockdown_start_date": "03/22/20",
+    "lockdown_end_date": "04/11/20",
+    "population": 39309783
+  },
+  "Ireland": {
+    "lockdown_start_date": "03/12/20",
+    "lockdown_end_date": "05/18/20",
+    "population": 4882495
+  },
+  "Italy": {
+    "lockdown_start_date": "03/09/20",
+    "lockdown_end_date": "05/18/20",
+    "population": 60550075
+  },
+  "Jordan": {
+    "lockdown_start_date": "03/18/20",
+    "lockdown_end_date": "04/30/20",
+    "population": 10101694
+  },
+  "Kuwait": {
+    "lockdown_start_date": "03/14/20",
+    "lockdown_end_date": "03/29/20",
+    "population": 4207083
+  },
+  "Lebanon": {
+    "lockdown_start_date": "03/15/20",
+    "lockdown_end_date": "03/28/20",
+    "population": 6855713
+  },
+  "Libya": {
+    "lockdown_start_date": "03/22/20",
+    "lockdown_end_date": null,
+    "population": 6777452
+  },
+  "Lithuania": {
+    "lockdown_start_date": "03/16/20",
+    "lockdown_end_date": "06/18/20",
+    "population": 2759627
+  },
+  "Malaysia": {
+    "lockdown_start_date": "03/18/20",
+    "lockdown_end_date": "06/09/20",
+    "population": 31949777
+  },
+  "Mexico": {
+    "lockdown_start_date": "03/23/20",
+    "lockdown_end_date": "06/01/20",
+    "population": 127575529
+  },
+  "Mongolia": {
+    "lockdown_start_date": "03/10/20",
+    "lockdown_end_date": "03/16/20",
+    "population": 3225167
+  },
+  "Morocco": {
+    "lockdown_start_date": "03/19/20",
+    "lockdown_end_date": "06/10/20",
+    "population": 36471769
+  },
+  "Namibia": {
+    "lockdown_start_date": "03/27/20",
+    "lockdown_end_date": "05/04/20",
+    "population": 2494530
+  },
+  "Nepal": {
+    "lockdown_start_date": "03/24/20",
+    "lockdown_end_date": "06/14/20",
+    "population": 28608710
+  },
+  "New_Zealand": {
+    "lockdown_start_date": "03/26/20",
+    "lockdown_end_date": "05/14/20",
+    "population": 4783063
+  },
+  "Pakistan": {
+    "lockdown_start_date": "03/24/20",
+    "lockdown_end_date": "05/09/20",
+    "population": 216565318
+  },
+  "Panama": {
+    "lockdown_start_date": "03/25/20",
+    "lockdown_end_date": null,
+    "population": 4246439
+  },
+  "Papua_New_Guinea": {
+    "lockdown_start_date": "03/24/20",
+    "lockdown_end_date": "04/07/20",
+    "population": 8776109
+  },
+  "Paraguay": {
+    "lockdown_start_date": "03/20/20",
+    "lockdown_end_date": "05/03/20",
+    "population": 7044636
+  },
+  "Peru": {
+    "lockdown_start_date": "03/16/20",
+    "lockdown_end_date": "06/30/20",
+    "population": 32510453
+  },
+  "Poland": {
+    "lockdown_start_date": "03/13/20",
+    "lockdown_end_date": "04/11/20",
+    "population": 37887768
+  },
+  "Portugal": {
+    "lockdown_start_date": "03/19/20",
+    "lockdown_end_date": "04/02/20",
+    "population": 10226187
+  },
+  "Romania": {
+    "lockdown_start_date": "03/25/20",
+    "lockdown_end_date": "05/12/20",
+    "population": 19364557
+  },
+  "Russia": {
+    "lockdown_start_date": "03/28/20",
+    "lockdown_end_date": "04/30/20",
+    "population": 145872256
+  },
+  "Rwanda": {
+    "lockdown_start_date": "03/21/20",
+    "lockdown_end_date": "04/19/20",
+    "population": 12626950
+  },
+  "Serbia": {
+    "lockdown_start_date": "03/15/20",
+    "lockdown_end_date": "05/04/20",
+    "population": 8772235
+  },
+  "Singapore": {
+    "lockdown_start_date": "04/07/20",
+    "lockdown_end_date": "06/01/20",
+    "population": 5804337
+  },
+  "South_Africa": {
+    "lockdown_start_date": "03/26/20",
+    "lockdown_end_date": "04/30/20",
+    "population": 58558270
+  },
+  "Spain": {
+    "lockdown_start_date": "03/14/20",
+    "lockdown_end_date": "05/09/20",
+    "population": 46736776
+  },
+  "Sri_Lanka": {
+    "lockdown_start_date": "03/18/20",
+    "lockdown_end_date": "06/21/20",
+    "population": 21323733
+  },
+  "Thailand": {
+    "lockdown_start_date": "03/25/20",
+    "lockdown_end_date": "05/31/20",
+    "population": 69037513
+  },
+  "Trinidad_and_Tobago": {
+    "lockdown_start_date": "03/17/20",
+    "lockdown_end_date": "03/31/20",
+    "population": 1394973
+  },
+  "Ukraine": {
+    "lockdown_start_date": "03/17/20",
+    "lockdown_end_date": "04/24/20",
+    "population": 43993638
+  },
+  "United_Arab_Emirates": {
+    "lockdown_start_date": "03/26/20",
+    "lockdown_end_date": "04/17/20",
+    "population": 9770529
+  },
+  "United_Kingdom": {
+    "lockdown_start_date": "03/23/20",
+    "lockdown_end_date": null,
+    "population": 67530172
+  },
+  "Venezuela": {
+    "lockdown_start_date": "03/17/20",
+    "lockdown_end_date": "05/13/20",
+    "population": 28515829
+  },
+  "Vietnam": {
+    "lockdown_start_date": "04/01/20",
+    "lockdown_end_date": "04/22/20",
+    "population": 96462106
+  },
+  "Zimbabwe": {
+    "lockdown_start_date": "03/30/20",
+    "lockdown_end_date": "05/02/20",
+    "population": 14645468
+  }
+}

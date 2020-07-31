@@ -14,11 +14,27 @@
         <button id="reset" style="margin-left: 150px">Reset</button>
         <script src="https://d3js.org/d3.v4.min.js"></script>
         
+        <script src="all_countryDataColors.js"></script>
         <script>
-            var allCountryDataMap = {
-                "US":{colorToUse: "red"},
-                "Brazil":{colorToUse: "darkkhaki"},
-            }
+            //TODO Figure out countries without nv lockdown
+            countriesWithoutLD = [
+                "South_Korea",
+                "Belarus",
+                "Iceland",
+                "Japan",
+                "Latvia",
+                "Malawi",
+                "Sweden",
+                "Taiwan",
+                "Uruguay",
+                "US",
+                "Brazil",
+            ]
+            newMap = {}
+            countriesWithoutLD.forEach(element => {
+                newMap[element] = allCountryDataMap[element]
+            });
+            allCountryDataMap = newMap
         </script>
         <script src="paintGraph.js"></script>
     </body>

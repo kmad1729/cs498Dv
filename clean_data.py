@@ -73,18 +73,91 @@ country_list = {
             "lockdown_end_date": None, 
             "case_per_capita_on_data" : {},
         },
+        "South_Korea" : {
+            "population": int("51,225,308".replace(",", '')),
+            "lockdown_start_date": None,
+            "lockdown_end_date": None, 
+            "case_per_capita_on_data" : {},
+        },
+        "Belarus" : {
+            "population": int("9,452,411".replace(",", '')),
+            "lockdown_start_date": None,
+            "lockdown_end_date": None, 
+            "case_per_capita_on_data" : {},
+        },
+        "Iceland" : {
+            "population": int("339,031".replace(",", '')),
+            "lockdown_start_date": None,
+            "lockdown_end_date": None, 
+            "case_per_capita_on_data" : {},
+        },
+        "Japan" : {
+            "population": int("126,860,301".replace(",", '')),
+            "lockdown_start_date": None,
+            "lockdown_end_date": None, 
+            "case_per_capita_on_data" : {},
+        },
+        "Latvia" : {
+            "population": int("1,906,743".replace(",", '')),
+            "lockdown_start_date": None,
+            "lockdown_end_date": None, 
+            "case_per_capita_on_data" : {},
+        },
+        "Malawi" : {
+            "population": int("18,628,747".replace(",", '')),
+            "lockdown_start_date": None,
+            "lockdown_end_date": None, 
+            "case_per_capita_on_data" : {},
+        },
+        "Sweden" : {
+            "population": int("10,036,379".replace(",", '')),
+            "lockdown_start_date": None,
+            "lockdown_end_date": None, 
+            "case_per_capita_on_data" : {},
+        },
+        "Taiwan" : {
+            "population": int("23,773,876".replace(",", '')),
+            "lockdown_start_date": None,
+            "lockdown_end_date": None, 
+            "case_per_capita_on_data" : {},
+        },
+        "Uruguay" : {
+            "population": int("3,461,734".replace(",", '')),
+            "lockdown_start_date": None,
+            "lockdown_end_date": None, 
+            "case_per_capita_on_data" : {},
+        },
 }
+
+with open("data_cleaning/nation_covid_pop_data.json", 'r') as f:
+    new_data = json.load(f)
+    for country, country_data in new_data.items():
+        if country not in country_list:
+            country_list[country] = country_data
+            country_list["case_per_capita_on_data"] : {}
+        else:
+            print(f'country {country} already in the list!!')
 
 date_to_country_mapping = {}
 
 for country_name in country_list:
-    country_name_with_space = country_name.replace("_", " ")
+    if country_name == "South_Korea":
+        country_name_with_space = "Korea, South"
+    elif country_name == "Taiwan":
+        country_name_with_space = "Taiwan*"
+    else:
+        country_name_with_space = country_name.replace("_", " ")
     with open(time_series_data_list) as f:
         reader = csv.DictReader(f)
         for row in reader:
             if row['Country/Region'] == country_name_with_space and row['Province/State'] == '':
-                print(f"Found country {country_name_with_space}!! Lat = {row['Lat']} Long = {row['Long']}")
+                # print(f"Found country {country_name_with_space}!! Lat = {row['Lat']} Long = {row['Long']}")
                 break
+               
+    if row['Country/Region'] != country_name_with_space:
+         print(f"Didn't find country ({country_name_with_space})")
+    elif row['Country/Region'] == "Korea, South":
+        print(f"Yay! found south korea!")
 
     # datetime.strptime("1/23/20", filewide_dateFormat)
     for col in row.keys():
@@ -98,7 +171,7 @@ for country_name in country_list:
                 prev_count_val, curr_count_val = map(int, (row[prev_date_col], row[col]))
                 case_count_inc = curr_count_val - prev_count_val
             except KeyError:
-                print(f'no data for prev date: {prev_date_col} continuing')
+                # print(f'no data for prev date: {prev_date_col} continuing')
                 continue
 
             curr_val = country_list[country_name]
@@ -110,10 +183,14 @@ for country_name in country_list:
 
 
             # curr_val["case_per_capita_on_data"][col] = { 'delta' : data_to_add, 'abs_case_count' :  abs_case_count}
-            print(f'{formatted_date}: country:{country_name}-- {col}-- case count: {abs_case_count} -- delta: {data_to_add}')
+            # print(f'{formatted_date}: country:{country_name}-- {col}-- case count: {abs_case_count} -- delta: {data_to_add}')
             if col not in date_to_country_mapping:
                 date_to_country_mapping[col] = {}
-            date_to_country_mapping[col][country_name] = data_to_add
+            
+            if data_to_add < 0:
+                date_to_country_mapping[col][country_name] = 0
+            else:
+                date_to_country_mapping[col][country_name] = data_to_add
         except ValueError:
             continue  
 
