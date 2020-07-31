@@ -12,7 +12,7 @@ var linesList = []
 var massagedLineData = []
 var dataToUseInGraph = {};
 var currLine = {}
-var margin = {top: 50, right: 50, bottom: 30, left: 50};
+var margin = {top: 50, right: 50, bottom: 80, left: 80};
 var width = 1500 - margin.left - margin.right;
 var height = 600 - margin.top - margin.bottom;
 var svg = d3.select("body").append("svg")
@@ -359,6 +359,23 @@ d3.json(finalDataUrl, function (error, inp_data) {
             });
 
     }
+
+    svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 0 - margin.left)
+    .attr("x",0 - (height / 2))
+    .attr("font-size", 14)
+    .attr("dy", "1em")
+    .style("text-anchor", "middle")
+    .attr("font-family", "sans-serif")
+    .text("Per day case count ->");      
+    
+    svgContainer.append("text")
+            .attr("transform","translate(" + (width/2) + " ," + (height + margin.bottom)+ ")")
+            .text("increasing order of days (2020) ->")
+            .style("text-anchor", "middle")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", 14)
 
 });
 
