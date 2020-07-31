@@ -26,7 +26,7 @@ var selectedCountries = [];
 var massagedLineData = []
 var daysInLockDownData = [];
 
-var margin = {top: 20, right: 20, bottom: 50, left: 50},
+var margin = {top: 20, right: 90, bottom: 50, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -117,7 +117,6 @@ d3.json(finalDataUrl, function (error, inp_data) {
         .attr("r", 5)
         .attr("cx", function(d) { return x(d.countryPop); })
         .attr("cy", function(d) { return y(d.daysInLockDown); })
-        .append("text")
         ;
 
     gdots.append("text").text(function(d){
@@ -127,11 +126,28 @@ d3.json(finalDataUrl, function (error, inp_data) {
         return (d.colorToUse);
     })
     .attr("x", function (d) {
-        return x(d.countryPop);
+        return x(d.countryPop) + 10;
     })
     .attr("y", function (d) {
         return y(d.daysInLockDown);
-    });
+    })
+    .attr("font-size", 10)
+    .on("mouseover", function(d, i) {
+        tooltip.style("display", null);
+    })
+    .on("mouseout", function(d, i) {
+        tooltip.style("display", "none");
+    })
+    .on("mousemove", function(d, i) {
+        mouseCoords = d3.mouse(d3.event.currentTarget)
+        xPos = mouseCoords[0] -5
+        yPos = mouseCoords[1] -5
+        tooltip.attr("transform", "translate(" + xPos + "," + yPos + ")")
+        tooltip.select("text")
+            .text("Days:" + d.daysInLockDown + " pop:" + d.countryPop + "m")
+            .attr("fill", d.colorToUse)
+    })
+    ;
 
     svg.append("text")             
     .attr("transform",
@@ -148,7 +164,25 @@ d3.json(finalDataUrl, function (error, inp_data) {
         .attr("font-size", 14)
         .attr("dy", "1em")
         .style("text-anchor", "middle")
-        .text("Number of days in lockdown");      
+        .text("Number of days in lockdown");  
+        
+        tooltip = d3.selectAll("svg").append("g")
+        .attr("class", "tooltip")
+        .style("display", "none")
+
+        tooltip.append("rect")
+                .attr("width", 200)
+                .attr("height", 20)
+                .attr("fill", "white")
+                .style("opacity", 0.5)
+
+        tooltip.append("text")
+                .attr("x", 30)
+                .attr("dy", "1.2em")
+                .style("text-anchor", "start")
+                .attr("font-size", "12px")
+                .attr("font-weight", "bold")
+
   
 });
 
