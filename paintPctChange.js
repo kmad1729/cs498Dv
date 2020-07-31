@@ -207,7 +207,7 @@ d3.json(finalDataUrl, function (error, inp_data) {
             .attr("font-weight", "bold")
     
     d3.select("svg").append("text")
-            .text("% change in daily cases pre/post lockdown per capita")
+            .text("% change in daily cases pre & post lockdown per capita")
             .style("text-anchor", "middle")
             .attr("font-size", 12)
             .attr("transform",

@@ -61,6 +61,12 @@ country_list = {
             "lockdown_end_date": datetime(year=2020, month=6, day=30).strftime(filewide_dateFormat),
             "case_per_capita_on_data" : {},
         },
+        "Turkey" : {
+            "population": int("83,429,615".replace(",", '')),
+            "lockdown_start_date": datetime(year=2020, month=4, day=23).strftime(filewide_dateFormat),
+            "lockdown_end_date": datetime(year=2020, month=4, day=27).strftime(filewide_dateFormat),
+            "case_per_capita_on_data" : {},
+        },
         "Brazil" : {
             "population": int("211,049,527".replace(",", '')),
             "lockdown_start_date": None,
