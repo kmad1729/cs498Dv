@@ -1,0 +1,10 @@
+.bar.positive {
+  fill: darkred;
+}
+.bar.negative {
+  fill: steelblue;
+}
+.overlay {
+    fill: none;
+    pointer-events: all;
+}
