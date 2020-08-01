@@ -8,16 +8,27 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <h1>Effects of nationwide lockdowns for covid-19 per day cases</h1>
-        <h2>Countries With Nationwide lockdown</h2>
-        <p><a href="daysInLockdown.html">Days in lockdown</a></p>
-        <p><a href="countries_with_nw_lockdown.html">Countries with nationwide lockdown</a></p>
-        <p><a href="countries_without_nw_lockdown.html">Countries without nationwide lockdown</a></p>
-        <p><a href="all_countries.html">ALL countries data</a></p>
-        <button id="start">Start Time Animation</button>
-        <button id="reset" style="margin-left: 150px">Reset</button>
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="all_countryDataColors.js"></script>
-        <script src="paintGraph.js"></script>
+        <h1 id="effectiveness-of-nationwide-lock-down-on-covid-19-response">Effectiveness of nationwide lock-down on Covid-19 response</h1>
+        
+        <div style="float: left"><a href="all_countries.html">previous</a></div>
+        <div style="float: right"><a href="daysInLockdown.html">next</a></div>
+        <div style="margin: 0 auto; width: 100px;"><a href="index.html">home</a></div>
+
+
+        <p>The 2020 Covid-19 virus pandemic has effected the entire world in all walks of life economically, culturally, politically and many other ways. Nations are trying to mitigate the issue in different ways. One such way is enforcing a <em>nationwide lock-down</em> and closing down all non-essential services for a specific period of time.</p>
+
+        <p>This report analyses the merits of such a measure using the <strong>daily case count per country metric as output</strong> vs  parameters like <strong>population</strong> and <strong>dates of lockdown enforcement</strong>. It presents difference between countries which opted for nationwide lockdown and which didn&#39;t.</p>
+        
+        <p>Press the <a href="daysInLockdown.html">next</a> link to view the results.</p>
+
+        <h4 id="references">References</h4>
+
+        <p>The report made use of the following data sources:</p>
+
+        <ul>
+            <li><a href="https://github.com/CSSEGISandData/COVID-19">John Hopkins CSSEGIS data</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/COVID-19_pandemic_lockdowns">Wikipedia lockdown data article</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations">Wikipedia 2019 world population data</a>)</li>
+        </ul>
     </body>
 </html> 

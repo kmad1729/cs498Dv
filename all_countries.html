@@ -8,8 +8,28 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <h1>Effects of nationwide lockdowns for covid-19 per day cases</h1>
-        <h2>Countries With Nationwide lockdown</h2>
+        <h1 id="effectiveness-of-nationwide-lock-down-on-covid-19-response">Effectiveness of nationwide lock-down on Covid-19 response</h1>
+        
+        <div style="float: left"><a href="countries_without_nw_lockdown.html">previous</a></div>
+        <div style="float: right"><a href="index.html">next</a></div>
+
+        <div style="margin: 0 auto; width: 100px;"><a href="index.html">home</a></div>
+
+       <h2>4) All countries Data</h2>
+       <p>This chart gives information about <strong>all</strong> the countries in the report.
+        It plots the daily case count vs each day in each country.
+    It also annotates the start and end dates of lockdown for each country.</p>
+    <p>The user can compare between different countries which did/didn't enforce nationwide lockdown.</p>
+    <p><strong>Conclusion</strong>:From these visualications, we can conclude that it is very hard to justify if nationwide lockdown is the most effective way to contain the pandemic. There are other approaches like contact-tracing, mandatory social distancing enforcement etc. There are a few things like resource allocation, pandemic guideline development, border policies wihch can be managed from a central authority but lockdown might not be the most effective step.</p>
+    <p>
+        <strong>TIP 1</strong>: You can select the countries you want to highlight in the line chart. 
+    </p>  
+    <p>
+        <strong>TIP 2</strong>: Hover over the chart to see the particular day's date and  <em>decreasing order</em> of case count per country on that day.
+    </p>  
+    <p>
+        <strong>TIP 3</strong>: To clear the chart and see only selected information, click on <em>Reset</em> and <em>Start Time Animation</em> buttons respectively.
+    </p>  
         <button id="start">Start Time Animation</button>
         <button id="reset" style="margin-left: 150px">Reset</button>
         <script src="https://d3js.org/d3.v4.min.js"></script>

@@ -3,13 +3,25 @@
 <html>
     <head>
         <title>
-            Covid-19 per-day cases
+            Covid-19 before/after lockdown
         </title>
         <link rel="stylesheet" type="text/css" href="paintPctChange.css">
     </head>
     <body>
-        <h1>Effects of nationwide lockdowns for covid-19 per day cases</h1>
-        <h2>Per-capita % change in daily cases in Countries With Nationwide lockdown</h2>
+        <h1 id="effectiveness-of-nationwide-lock-down-on-covid-19-response">Effectiveness of nationwide lock-down on Covid-19 response</h1>
+        
+        <div style="float: left"><a href="daysInLockdown.html">previous</a></div>
+        <div style="float: right"><a href="countries_without_nw_lockdown.html">next</a></div>
+
+        <div style="margin: 0 auto; width: 100px;"><a href="index.html">home</a></div>
+
+        <h2>2) Per-capita % change in daily cases in Countries With Nationwide lockdown</h2>
+        
+        <p>This chart illustrates the daily case count percentage change between the days on which lockdown was enforced and lifted. The percentages are normalized by per-capita to fit properly.</p>
+        <p>We can see that for India, South Africa and Russia, the case count increases even after lockdown.</p>
+        <p>
+            <strong>TIP</strong>: Hover over the country bar to see the dates on which lockdown was enforced and lifted.
+        </p>       
         <div id="chart"></div>
         <script src="https://d3js.org/d3.v4.min.js"></script>
         
